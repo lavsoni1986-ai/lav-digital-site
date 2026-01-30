@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Meta Tags for SEO & Social Sharing (WhatsApp Preview ke liye) -->
+    <title>LAV DIGITAL | Enterprise SaaS & Bharat's Digital Infrastructure</title>
+    <meta name="description" content="Empowering Hospitals, Shops, and Service Providers with specialized digital systems. Go live in 24 hours.">
+    <meta property="og:title" content="LAV DIGITAL | Growth OS for Businesses">
+    <meta property="og:description" content="Deploy your digital ecosystem in 24 hours with WhatsApp booking and DSSL-verified trust.">
+    <meta property="og:type" content="website">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-deep: #000212;
+            --accent-blue: #0066FF;
+            --accent-green: #00F5A0;
+            --glass-bg: rgba(255, 255, 255, 0.02);
+            --border-white: rgba(255, 255, 255, 0.08);
+        }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-deep);
+            color: #E2E8F0;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        /* Premium Background Mesh - Global feel ke liye */
+        .mesh-bg {
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(0, 102, 255, 0.15) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, rgba(0, 245, 160, 0.1) 0, transparent 50%);
+        }
+
+        /* Glass Cards with smooth transitions */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-white);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(0, 102, 255, 0.5);
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0066FF 0%, #0044BB 100%);
+            box-shadow: 0 10px 40px rgba(0, 102, 255, 0.4);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #000212; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 1024px) { .bento-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 640px) { .bento-grid { grid-template-columns: 1fr; } }
+
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        
+        .chat-pulse { animation: pulse-blue 2s infinite; }
+        @keyframes pulse-blue {
+            0% { box-shadow: 0 0 0 0 rgba(0, 102, 255, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 102, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 102, 255, 0); }
+        }
+        details summary::-webkit-details-marker { display:none; }
+    </style>
+</head>
+<body class="antialiased mesh-bg min-h-screen">
+
+    <!-- Success Feedback UI - Form submit hone par dikhega -->
+    <div id="success-toast" class="fixed top-24 right-8 z-[500] hidden">
+        <div class="glass-card bg-emerald-500/20 border-emerald-500/50 p-6 rounded-3xl flex items-center gap-4">
+            <span class="text-4xl">🚀</span>
+            <div class="text-left">
+                <p class="text-lg font-black text-white leading-tight uppercase">Request Logged</p>
+                <p class="text-xs text-emerald-400 font-bold uppercase tracking-widest text-left">Opening WhatsApp Hub...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation - Header Section -->
+    <nav class="fixed top-0 w-full z-[400] border-b border-white/[0.05] bg-black/70 backdrop-blur-3xl">
+        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+            
+            <!-- Professional Logotype (Icon + Brand Name) -->
+            <div class="flex items-center gap-4 group cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                        <svg viewBox="0 0 100 100" class="w-7 h-7 fill-white">
+                            <rect x="20" y="20" width="20" height="60" rx="2" />
+                            <rect x="20" y="60" width="60" height="20" rx="2" />
+                            <circle cx="75" cy="25" r="10" class="fill-blue-400" />
+                        </svg>
+                    </div>
+                    <div class="flex flex-col text-left">
+                        <span class="text-2xl font-black tracking-tighter text-white leading-none uppercase">LAV <span class="text-blue-500">DIGITAL</span></span>
+                        <span class="text-[9px] text-slate-500 font-bold uppercase tracking-[0.4em] leading-none mt-1">Trust Systems</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Desktop Links -->
+            <div class="hidden lg:flex items-center gap-10 text-[10px] font-black uppercase tracking-[0.25em] text-slate-400">
+                <a href="#ecosystem" class="hover:text-blue-400 transition">Solutions</a>
+                <a href="#proof" class="hover:text-blue-400 transition">Our Work</a>
+                <a href="#pricing" class="hover:text-blue-400 transition">Pricing</a>
+                <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+            </div>
+
+            <!-- Get Started Button -->
+            <div class="flex items-center gap-6">
+                <a href="https://wa.me/919753239303?text=Hi%20Lav,%20I'm%20ready%20to%20deploy%20digital%20infrastructure%20for%20my%20business." target="_blank" class="btn-primary text-white px-9 py-4 rounded-full text-[11px] font-black hover:brightness-110 transition uppercase tracking-widest shadow-blue-500/20">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-80 pb-40 px-8">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[700px] bg-blue-600/5 blur-[160px] rounded-full pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[11px] font-black mb-16 tracking-[0.5em] uppercase">
+                <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-ping"></span> 
+                Leading the Bharat 3.0 Revolution
+            </div>
+            
+            <h1 class="text-7xl md:text-[13rem] font-black text-white leading-[0.7] tracking-tighter mb-16 uppercase">
+                Business <br>
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-blue-400 to-emerald-400 uppercase">Growth OS.</span>
+            </h1>
+            
+            <p class="text-xl md:text-3xl text-slate-400 mb-20 max-w-5xl mx-auto leading-relaxed font-medium">
+                We empower Hospitals, Shops, and Service Providers with specialized digital systems. 
+                Go live in 24 hours with WhatsApp booking and lead tracking.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-8">
+                <a href="#ecosystem" class="bg-white text-black px-16 py-8 rounded-[2.5rem] font-black text-2xl hover:scale-105 transition shadow-2xl text-center uppercase tracking-tighter">Solutions</a>
+                <a href="#proof" class="glass-card px-16 py-8 rounded-[2.5rem] font-black text-2xl hover:bg-white/5 transition border border-white/20 text-center uppercase tracking-tighter">Live Results</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section - Real Work Proof -->
+    <section id="proof" class="py-40 px-8 relative overflow-hidden bg-white/5 border-y border-white/[0.05]">
+        <div class="max-w-7xl mx-auto text-left">
+            <div class="mb-24">
+                <span class="text-emerald-400 font-black uppercase tracking-[0.4em] text-[10px] mb-4 block text-left font-bold tracking-widest uppercase">Real Proof</span>
+                <h2 class="text-6xl font-black text-white tracking-tighter uppercase text-left">Proven Systems.</h2>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-10">
+                <!-- Case Study 1: Hospital -->
+                <div class="glass-card p-10 rounded-[4rem] group cursor-pointer text-left" onclick="chatRedirect('AdityaHospital_Case')">
+                    <div class="aspect-video bg-slate-900 rounded-[2rem] mb-10 overflow-hidden relative border border-white/10 flex items-center justify-center">
+                         <span class="text-6xl group-hover:scale-110 transition-transform">🏥</span>
+                         <div class="absolute bottom-6 left-6 right-6 h-1.5 w-full bg-blue-600 rounded-full"></div>
+                    </div>
+                    <h3 class="text-2xl font-black text-white mb-4 uppercase tracking-tighter text-left leading-tight uppercase">Aditya Hospital Digital OPD</h3>
+                    <p class="text-slate-400 text-sm font-medium mb-8 text-left italic">"Wait times reduced by 40% using WhatsApp appointment engine in Shahdol."</p>
+                    <button class="text-blue-500 font-black text-xs uppercase tracking-widest group-hover:translate-x-3 transition-transform font-bold text-left uppercase">Request Demo →</button>
+                </div>
+
+                <!-- Case Study 2: StyleQR -->
+                <div class="glass-card p-10 rounded-[4rem] group cursor-pointer text-left" onclick="window.open('https://styleqr.com', '_blank')">
+                    <div class="aspect-video bg-slate-900 rounded-[2rem] mb-10 overflow-hidden relative border border-white/10 flex items-center justify-center">
+                         <span class="text-6xl group-hover:scale-110 transition-transform text-left">📱</span>
+                         <div class="absolute bottom-6 left-6 right-6 h-1.5 w-full bg-emerald-600 rounded-full text-left"></div>
+                    </div>
+                    <h3 class="text-2xl font-black text-white mb-4 uppercase tracking-tighter text-left leading-tight uppercase">StyleQR Global Network</h3>
+                    <p class="text-slate-400 text-sm font-medium mb-8 text-left italic">"Digital identity network used by 500+ professionals for instant sharing."</p>
+                    <button class="text-emerald-500 font-black text-xs uppercase tracking-widest group-hover:translate-x-3 transition-transform font-bold text-left uppercase">Visit styleqr.com →</button>
+                </div>
+
+                <!-- Case Study 3: ShahdolBazaar -->
+                <div class="glass-card p-10 rounded-[4rem] group cursor-pointer text-left" onclick="window.open('https://shahdolbazaar.com', '_blank')">
+                    <div class="aspect-video bg-slate-900 rounded-[2rem] mb-10 overflow-hidden relative border border-white/10 flex items-center justify-center text-left">
+                         <span class="text-6xl group-hover:scale-110 transition-transform">🛒</span>
+                         <div class="absolute bottom-6 left-6 right-6 h-1.5 w-full bg-blue-400 rounded-full"></div>
+                    </div>
+                    <h3 class="text-2xl font-black text-white mb-4 uppercase tracking-tighter text-left leading-tight uppercase">ShahdolBazaar Marketplace</h3>
+                    <p class="text-slate-400 text-sm font-medium mb-8 text-left italic">"Hyper-local marketplace connecting city vendors to digital orders."</p>
+                    <button class="text-blue-400 font-black text-xs uppercase tracking-widest group-hover:translate-x-3 transition-transform font-bold text-left uppercase">Live Platform →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Solutions Section -->
+    <section id="ecosystem" class="py-40 px-8 bg-slate-950/50 relative border-b border-white/[0.05] text-left">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-32">
+                <h2 class="text-7xl font-black text-white mb-6 tracking-tighter text-left uppercase">Our Solutions.</h2>
+                <div class="w-24 h-1.5 bg-blue-600 rounded-full mb-8"></div>
+                <p class="text-slate-500 font-black uppercase tracking-[0.4em] text-[11px] text-left uppercase">Smart Digital Infrastructure.</p>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Healthcare Module -->
+                <div class="glass-card p-14 rounded-[5rem] bg-gradient-to-br from-blue-600/10 to-transparent flex flex-col justify-between group h-[500px] text-left cursor-pointer" onclick="chatRedirect('Healthcare_Service')">
+                    <div class="text-left">
+                        <div class="flex justify-between items-start mb-16 text-left">
+                            <div class="w-20 h-20 bg-blue-600 rounded-3xl flex items-center justify-center text-5xl shadow-2xl">🏥</div>
+                            <span class="px-5 py-2 rounded-full bg-blue-500/20 text-blue-400 text-[10px] font-black uppercase tracking-widest">Healthcare</span>
+                        </div>
+                        <h3 class="text-4xl font-black text-white mb-6 tracking-tighter text-left uppercase uppercase">Smart Hospital</h3>
+                        <p class="text-slate-400 text-lg leading-relaxed mb-10 max-w-sm text-left font-medium">OPD booking, WhatsApp report delivery and patient records.</p>
+                    </div>
+                    <span class="text-blue-500 font-black text-[14px] uppercase tracking-[0.4em] group-hover:translate-x-5 transition-transform inline-block font-bold text-left uppercase">Get Your Demo →</span>
+                </div>
+
+                <!-- Retail Module -->
+                <div class="glass-card p-14 rounded-[5rem] bg-gradient-to-br from-emerald-600/10 to-transparent flex flex-col justify-between group h-[500px] text-left cursor-pointer" onclick="chatRedirect('Retail_Service')">
+                    <div class="text-left text-left">
+                        <div class="flex justify-between items-start mb-16 text-left text-left">
+                            <div class="w-20 h-20 bg-emerald-600 rounded-3xl flex items-center justify-center text-5xl shadow-2xl text-left font-bold">🛍️</div>
+                            <span class="px-5 py-2 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-black uppercase tracking-widest text-left">Retail Hub</span>
+                        </div>
+                        <h3 class="text-4xl font-black text-white mb-6 tracking-tighter text-left uppercase text-left">Smart Shops</h3>
+                        <p class="text-slate-400 text-lg leading-relaxed mb-10 max-w-sm text-left font-medium uppercase text-left">QR digital catalogs, WhatsApp ordering and local lead gen.</p>
+                    </div>
+                    <span class="text-emerald-500 font-black text-[14px] uppercase tracking-[0.4em] group-hover:translate-x-5 transition-transform inline-block text-left uppercase font-bold text-left">Inquire Now →</span>
+                </div>
+
+                <!-- AI System -->
+                <div class="lg:col-span-2 glass-card p-12 rounded-[5rem] flex flex-col md:flex-row items-center gap-16 bg-gradient-to-r from-blue-900/20 to-transparent relative overflow-hidden text-left uppercase uppercase">
+                    <div class="w-32 h-32 bg-blue-600/30 rounded-[3rem] flex items-center justify-center text-8xl shrink-0 shadow-inner group-hover:animate-pulse transition-all">🤖</div>
+                    <div class="relative z-10 text-left text-left">
+                        <h4 class="text-3xl font-black text-white mb-4 tracking-tight text-left uppercase">Lav AI Core</h4>
+                        <p class="text-slate-400 text-lg leading-relaxed font-medium text-left uppercase uppercase">Gemini-powered automated customer support and analytics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-40 px-8 text-left">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-7xl font-black text-white mb-6 tracking-tighter uppercase text-center leading-none">Simple Plans.</h2>
+            <p class="text-slate-500 font-black uppercase tracking-[0.4em] text-[11px] mb-28 text-center uppercase tracking-widest uppercase text-center">Launch tomorrow. No Complexity.</p>
+            
+            <div class="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto text-left items-start uppercase">
+                <!-- Starter Plan -->
+                <div class="glass-card p-14 rounded-[5rem] text-left border-white/5 h-full flex flex-col justify-between uppercase">
+                    <div>
+                        <h3 class="text-lg font-black text-slate-500 mb-2 uppercase tracking-widest">Starter</h3>
+                        <div class="text-6xl font-black text-white mb-12">₹999<span class="text-sm font-bold text-slate-500 uppercase">/mo</span></div>
+                        <ul class="space-y-6 mb-16 text-sm text-slate-400 font-bold uppercase tracking-tight text-left">
+                            <li class="flex items-center gap-4 text-left uppercase"><div class="w-2 h-2 rounded-full bg-blue-600"></div> Smart QR Card</li>
+                            <li class="flex items-center gap-4 text-left uppercase"><div class="w-2 h-2 rounded-full bg-blue-600"></div> Google Maps Setup</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/919753239303?text=Hi%20Lav,%20I'm%20ready%20to%20start%20with%20the%20999%20Starter%20Plan." target="_blank" class="block w-full py-6 rounded-[2rem] border border-white/10 hover:bg-white/5 text-center font-black uppercase text-[11px] tracking-[0.2em] transition font-bold text-center uppercase">Activate</a>
+                </div>
+
+                <!-- Business Plan -->
+                <div class="glass-card p-14 rounded-[6rem] text-left border-blue-600 bg-gradient-to-b from-blue-600/10 to-transparent relative scale-110 shadow-2xl h-full flex flex-col justify-between uppercase">
+                    <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-12 py-3 rounded-full text-[11px] font-black uppercase tracking-[0.4em] shadow-2xl uppercase">Recommended</div>
+                    <div>
+                        <h3 class="text-lg font-black text-white mb-2 uppercase tracking-widest">Business</h3>
+                        <div class="text-6xl font-black text-white mb-12 uppercase">₹2,999<span class="text-sm font-bold text-slate-500 uppercase">/mo</span></div>
+                        <ul class="space-y-6 mb-16 text-sm text-slate-200 font-bold uppercase tracking-tighter text-left uppercase">
+                            <li class="flex items-center gap-4 font-bold uppercase"><div class="w-3 h-3 rounded-full bg-blue-500 shadow-glow animate-pulse"></div> Full Website Setup</li>
+                            <li class="flex items-center gap-4 font-bold uppercase"><div class="w-3 h-3 rounded-full bg-blue-500 shadow-glow"></div> WhatsApp Order Hub</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/919753239303?text=Hi%20Lav,%20I'm%20ready%20to%20scale%20my%20business%20with%20the%202999%20Business%20Plan." target="_blank" class="block w-full py-7 rounded-[2.5rem] bg-blue-600 text-white text-center font-black uppercase text-[12px] tracking-[0.3em] hover:brightness-110 transition shadow-2xl font-bold text-center uppercase">Deploy Now</a>
+                </div>
+
+                <!-- Enterprise/Healthcare Plan -->
+                <div class="glass-card p-14 rounded-[5rem] text-left border-white/5 h-full flex flex-col justify-between uppercase">
+                    <div>
+                        <h3 class="text-lg font-black text-slate-500 mb-2 uppercase tracking-widest uppercase">Healthcare</h3>
+                        <div class="text-6xl font-black text-white mb-12 text-left uppercase">₹4,999<span class="text-sm font-bold text-slate-500 uppercase">/mo</span></div>
+                        <ul class="space-y-6 mb-16 text-sm text-slate-400 font-bold uppercase tracking-tight text-left uppercase">
+                            <li class="flex items-center gap-4 text-left uppercase uppercase"><div class="w-2 h-2 rounded-full bg-blue-600"></div> OPD Booking Stack</li>
+                            <li class="flex items-center gap-4 text-left uppercase uppercase"><div class="w-2 h-2 rounded-full bg-blue-600"></div> Patient Records</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/919753239303?text=Hi%20Lav,%20I'm%20interested%20in%20the%204999%20Healthcare%20Plan." target="_blank" class="block w-full py-5 rounded-[2rem] border border-white/10 hover:bg-white/5 text-center font-black uppercase text-[11px] tracking-[0.2em] transition font-bold text-center uppercase">Inquire Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Lead Form -->
+    <section id="contact" class="py-40 px-8 relative overflow-hidden text-left uppercase uppercase">
+        <div class="max-w-7xl mx-auto text-left">
+            <div class="glass-card p-16 md:p-32 rounded-[6rem] border-blue-500/20 shadow-2xl relative z-10 bg-gradient-to-br from-blue-900/10 to-transparent text-left text-left">
+                <div class="grid lg:grid-cols-2 gap-32 text-left text-left uppercase">
+                    <div class="text-left text-left uppercase">
+                        <h2 class="text-7xl font-black text-white mb-10 tracking-tighter uppercase text-left text-left uppercase">Contact <br>Now.</h2>
+                        <p class="text-2xl text-slate-400 mb-20 leading-relaxed font-medium text-left uppercase tracking-tighter font-bold uppercase text-left">Deploy your system today.</p>
+                        
+                        <div class="space-y-16 text-left text-left uppercase">
+                            <div class="flex items-center gap-10 group text-left text-left cursor-pointer uppercase" onclick="window.open('https://wa.me/919753239303', '_blank')">
+                                <div class="w-20 h-20 bg-blue-600 rounded-[2.5rem] flex items-center justify-center text-5xl group-hover:scale-110 transition-transform shadow-2xl">📱</div>
+                                <div class="text-left text-left uppercase">
+                                    <h4 class="font-black text-white uppercase text-[11px] tracking-widest mb-2 text-left uppercase uppercase text-left">WhatsApp Direct</h4>
+                                    <p class="text-3xl text-slate-400 font-black text-left tracking-tighter font-bold text-left">+91 9753239303</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card p-14 rounded-[5rem] bg-white/5 text-left text-left uppercase uppercase">
+                        <form id="contactForm" onsubmit="handleContact(event)" class="space-y-8 text-left text-left uppercase">
+                            <div class="grid grid-cols-2 gap-6 text-left uppercase">
+                                <div class="text-left uppercase">
+                                    <label class="block text-[11px] font-black uppercase tracking-widest text-slate-500 mb-3 ml-3 text-left">Identity</label>
+                                    <input type="text" id="form-name" required class="w-full p-6 bg-white/5 border border-white/10 rounded-[2rem] text-sm text-white focus:border-blue-500 outline-none uppercase" placeholder="Your Name">
+                                </div>
+                                <div class="text-left uppercase">
+                                    <label class="block text-[11px] font-black uppercase tracking-widest text-slate-500 mb-3 ml-3 text-left">City</label>
+                                    <input type="text" id="form-city" required class="w-full p-6 bg-white/5 border border-white/10 rounded-[2rem] text-sm text-white focus:border-blue-500 outline-none uppercase" placeholder="City">
+                                </div>
+                            </div>
+                            <div class="text-left uppercase">
+                                <label class="block text-[11px] font-black uppercase tracking-widest text-slate-500 mb-3 ml-3 text-left font-bold uppercase uppercase">System Type</label>
+                                <select id="form-platform" class="w-full p-6 bg-slate-900 border border-white/10 rounded-[2rem] text-sm text-white appearance-none outline-none focus:border-blue-500 cursor-pointer text-left uppercase uppercase">
+                                    <option>Hospital Systems</option>
+                                    <option>Retail Smart Shop</option>
+                                    <option>Marketplace Hub</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full btn-primary text-white py-7 rounded-[3rem] font-black uppercase text-[12px] tracking-[0.4em] hover:scale-105 transition shadow-2xl text-center uppercase uppercase">Send Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Bot Component -->
+    <div class="fixed bottom-10 right-10 z-[300] flex flex-col items-end pointer-events-none uppercase">
+        <div id="chat-window" class="hidden mb-6 w-80 glass-card rounded-[3rem] overflow-hidden shadow-2xl pointer-events-auto transition-all transform scale-90 opacity-0 origin-bottom-right border-blue-600/30 uppercase">
+            <div class="bg-blue-600 p-6 flex items-center gap-4 text-left uppercase">
+                <div class="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-2xl shadow-inner text-center font-bold uppercase uppercase">🤖</div>
+                <div class="text-left uppercase">
+                    <h5 class="text-white text-[11px] font-black uppercase tracking-widest text-left font-black uppercase uppercase">Lav Assistant</h5>
+                    <p class="text-blue-100 text-[10px] font-bold text-left uppercase uppercase">Active Node</p>
+                </div>
+            </div>
+            <div class="p-8 bg-slate-950/90 space-y-5 text-left uppercase uppercase">
+                <p class="text-xs text-slate-300 text-left leading-relaxed uppercase">How can I help you digitize today?</p>
+                <div class="space-y-3 text-left uppercase">
+                    <button onclick="chatRedirect('Consultation')" class="block w-full p-4 bg-white/5 rounded-2xl border border-white/10 text-[11px] font-black text-white hover:bg-blue-600 transition text-left uppercase tracking-widest font-bold uppercase uppercase">Free Consultation</button>
+                    <button onclick="chatRedirect('Demo')" class="block w-full p-4 bg-white/5 rounded-2xl border border-white/10 text-[11px] font-black text-white hover:bg-emerald-600 transition text-left uppercase tracking-widest font-bold uppercase uppercase uppercase">Request Demo</button>
+                </div>
+            </div>
+        </div>
+        <button id="chat-trigger" onclick="toggleChat()" class="pointer-events-auto w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center text-4xl shadow-[0_0_50px_rgba(0,102,255,0.4)] chat-pulse hover:scale-110 transition-transform active:scale-95 text-center uppercase">
+            <span id="chat-icon">💬</span>
+        </button>
+    </div>
+
+    <!-- Application JavaScript Logic -->
+    <script>
+        // Chat toggle functionality
+        function toggleChat() {
+            const chatWindow = document.getElementById('chat-window');
+            const chatIcon = document.getElementById('chat-icon');
+            if (chatWindow.classList.contains('hidden')) {
+                chatWindow.classList.remove('hidden');
+                setTimeout(() => {
+                    chatWindow.classList.add('opacity-100', 'scale-100');
+                    chatWindow.classList.remove('opacity-0', 'scale-90');
+                }, 10);
+                chatIcon.innerText = '✕';
+            } else {
+                chatWindow.classList.add('opacity-0', 'scale-90');
+                chatWindow.classList.remove('opacity-100', 'scale-100');
+                setTimeout(() => { chatWindow.classList.add('hidden'); }, 400);
+                chatIcon.innerText = '💬';
+            }
+        }
+
+        // Redirect handlers for WhatsApp
+        function chatRedirect(type) {
+            let msg = encodeURIComponent(`Hi Lav, I'm reaching out regarding the ${type}. Let's discuss my digital system requirements.`);
+            window.open(`https://wa.me/919753239303?text=${msg}`, '_blank');
+        }
+
+        // Contact form processor
+        function handleContact(e) {
+            e.preventDefault();
+            const name = document.getElementById('form-name').value;
+            const city = document.getElementById('form-city').value;
+            const node = document.getElementById('form-platform').value;
+            const message = `🚀 *New Infrastructure Inquiry*%0A%0A*Name:* ${name}%0A*City:* ${city}%0A*Service:* ${node}%0A%0A_Sent via Global Hub Portal_`;
+            
+            const toast = document.getElementById('success-toast');
+            toast.classList.remove('hidden');
+            
+            setTimeout(() => {
+                window.open(`https://wa.me/919753239303?text=${message}`, '_blank');
+                toast.classList.add('hidden');
+                document.getElementById('contactForm').reset();
+            }, 1200);
+        }
+
+        // Research paper logic
+        function handleWhitepaperRequest() {
+            let msg = encodeURIComponent(`Hi Lav, I'm interested in reading the DSSL Research Whitepaper. Please share access details.`);
+            window.open(`https://wa.me/919753239303?text=${msg}`, '_blank');
+        }
+    </script>
+
+    <!-- Global Footer -->
+    <footer class="py-32 px-8 border-t border-white/[0.05] bg-black text-left uppercase">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-20 text-center md:text-left uppercase uppercase">
+            <div class="text-left uppercase">
+                <div class="flex items-center gap-4 mb-10 justify-center md:justify-start uppercase uppercase">
+                    <!-- Footer Brand Logotype -->
+                    <div class="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center font-black text-white text-xl shadow-xl uppercase uppercase">
+                        <svg viewBox="0 0 100 100" class="w-7 h-7 fill-white">
+                            <path d="M20 20 H40 V60 H80 V80 H20 Z" />
+                        </svg>
+                    </div>
+                    <span class="text-3xl font-black tracking-tighter uppercase text-white leading-none uppercase uppercase uppercase">LAV <br><span class="text-blue-500 font-black uppercase uppercase uppercase uppercase">DIGITAL</span></span>
+                </div>
+                <p class="text-slate-500 text-sm leading-loose max-w-sm text-left font-medium uppercase uppercase uppercase uppercase">
+                    The Growth Hub for Bharat's Entrepreneurs. <br>
+                    Research: Shahdol, Madhya Pradesh. <br>
+                    Contact: +91 9753239303 | lavsoni1986@gmail.com<br>
+                    © 2024 Lav Soni Research & Systems.
+                </p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-24 text-[10px] font-black uppercase tracking-[0.4em] text-slate-500 text-left uppercase uppercase uppercase">
+                <div class="flex flex-col gap-6 text-left uppercase uppercase">
+                    <p class="text-white mb-2 text-left uppercase font-black tracking-widest uppercase uppercase">Live Projects</p>
+                    <a href="https://styleqr.com" target="_blank" class="hover:text-blue-500 transition text-left uppercase">StyleQR Global</a>
+                    <a href="https://shahdolbazaar.com" target="_blank" class="hover:text-blue-500 transition uppercase text-left uppercase">ShahdolBazaar</a>
+                </div>
+                <div class="flex flex-col gap-6 text-left uppercase uppercase uppercase">
+                    <p class="text-white mb-2 text-left uppercase font-black tracking-widest uppercase uppercase uppercase">Explore</p>
+                    <a href="#about" class="hover:text-blue-400 transition text-left uppercase uppercase">Founder Story</a>
+                    <a href="#dssl" class="hover:text-blue-400 transition text-left uppercase uppercase uppercase">DSSL Protocol</a>
+                </div>
+                <div class="flex flex-col gap-6 text-left text-left uppercase font-black tracking-widest uppercase uppercase uppercase uppercase">
+                    <p class="text-white mb-2 text-left text-left uppercase font-black tracking-widest uppercase uppercase uppercase uppercase uppercase">Connect</p>
+                    <a href="https://wa.me/919753239303" target="_blank" class="hover:text-blue-500 transition text-left text-left font-bold uppercase uppercase uppercase uppercase uppercase uppercase">WhatsApp Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
