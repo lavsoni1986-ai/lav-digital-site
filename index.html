@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -83,8 +82,8 @@
         <div class="glass-card bg-emerald-500/20 border-emerald-500/50 p-6 rounded-3xl flex items-center gap-4">
             <span class="text-4xl">🚀</span>
             <div class="text-left">
-                <p class="text-lg font-black text-white leading-tight tracking-widest uppercase">Anurodh Prapt Hua</p>
-                <p class="text-xs text-emerald-400 font-bold tracking-[0.2em] text-left uppercase">Strategic Hub se connect ho rahe hain...</p>
+                <p class="text-lg font-black text-white leading-tight tracking-widest">Inquiry Received</p>
+                <p class="text-xs text-emerald-400 font-bold tracking-[0.2em] text-left">Connecting to Strategic Hub...</p>
             </div>
         </div>
     </div>
@@ -126,7 +125,7 @@
             </div>
 
             <div class="flex items-center gap-6">
-                <a href="https://wa.me/919753239303" target="_blank" class="btn-primary text-white px-9 py-4 rounded-full text-[11px] font-black hover:brightness-110 transition uppercase tracking-[0.2em] shadow-blue-500/20">
+                <a href="https://wa.me/919753239303" target="_blank" class="btn-primary text-white px-9 py-4 rounded-full text-[11px] font-black hover:brightness-110 transition uppercase tracking-[0.2em] shadow-blue-500/20 font-bold">
                     Pitch Deck
                 </a>
             </div>
@@ -142,7 +141,6 @@
                 Tier-2 & Tier-3 Digital Infrastructure Hub
             </div>
 
-            <!-- MSME Trust Badge Hero -->
             <div class="flex flex-col items-center justify-center gap-3 mb-16">
                 <div class="flex items-center gap-3">
                     <svg width="160" height="44" viewBox="0 0 160 44" xmlns="http://www.w3.org/2000/svg">
@@ -160,7 +158,7 @@
                             GOVT VERIFIED
                         </text>
                     </svg>
-                    <span class="text-[10px] font-black uppercase tracking-widest text-slate-400">
+                    <span class="text-[10px] font-black uppercase tracking-widest text-slate-400 font-bold">
                         Registered Startup
                     </span>
                 </div>
@@ -172,7 +170,7 @@
             </h1>
             
             <p class="text-xl md:text-3xl text-slate-400 mb-20 max-w-5xl mx-auto leading-relaxed font-bold uppercase tracking-tighter">
-                Building whitelabel SaaS ecosystems for Restaurants, Hospitals, and Local Commerce. 
+                Building whitelabel SaaS ecosystems for Restaurants, Hospitals, News Media, and Local Commerce. 
             </p>
             
             <div class="flex flex-col sm:flex-row justify-center gap-8">
@@ -187,7 +185,7 @@
         <div class="max-w-7xl mx-auto text-left">
             <div class="grid lg:grid-cols-2 gap-24 items-center">
                 <div class="font-bold uppercase">
-                    <span class="text-red-500 font-black uppercase tracking-[0.4em] text-[10px] mb-4 block font-bold">Mool Samasya</span>
+                    <span class="text-red-500 font-black uppercase tracking-[0.4em] text-[10px] mb-4 block font-bold">The Core Crisis</span>
                     <h2 class="text-6xl font-black text-white tracking-tighter uppercase mb-10 leading-none">Bharat is <br>Digitally Broken.</h2>
                     <p class="text-xl text-slate-400 mb-12 leading-relaxed tracking-tight">
                         90% of Restaurants & MSMEs still run on manual paper-logs. Existing SaaS is too expensive for local nodes. We bridge this with hyper-affordable whitelabel systems.
@@ -216,7 +214,7 @@
         </div>
     </section>
 
-    <!-- Real Traction -->
+    <!-- Slide 4: Real Traction -->
     <section id="proof" class="py-40 px-8 relative overflow-hidden border-b border-white/[0.05]">
         <div class="max-w-7xl mx-auto text-left">
             <div class="mb-24">
@@ -224,50 +222,65 @@
                 <h2 class="text-6xl font-black text-white tracking-tighter uppercase text-left">Proven Systems.</h2>
             </div>
 
-            <div class="grid lg:grid-cols-3 gap-10 text-left font-bold uppercase">
+            <div class="grid lg:grid-cols-2 xl:grid-cols-4 gap-8 text-left font-bold uppercase">
                 <!-- Case Study 1: Hospital -->
-                <div class="glass-card p-10 rounded-[4rem] group cursor-pointer text-left" onclick="window.open('https://adityahospitalsdl.netlify.app/', '_blank')">
-                    <div class="aspect-video bg-slate-900 rounded-[2rem] mb-10 overflow-hidden relative border border-white/10 flex items-center justify-center">
-                         <span class="text-6xl group-hover:scale-110 transition-transform">🏥</span>
-                         <div class="absolute bottom-6 left-6 right-6 h-1 w-full bg-blue-600 rounded-full"></div>
+                <div class="glass-card p-8 rounded-[3rem] group cursor-pointer text-left" onclick="toggleChat()">
+                    <div class="aspect-video bg-slate-900 rounded-[2rem] mb-8 overflow-hidden relative border border-white/10 flex items-center justify-center">
+                         <span class="text-5xl group-hover:scale-110 transition-transform">🏥</span>
+                         <div class="absolute bottom-4 left-4 right-4 h-1 w-full bg-blue-600 rounded-full"></div>
                     </div>
-                    <h3 class="text-2xl font-black text-white mb-4 tracking-tighter leading-tight text-left uppercase">Aditya Hospital</h3>
-                    <p class="text-slate-400 text-xs font-medium mb-8 italic text-left tracking-tight">"Digital OPD engine handling bookings in Shahdol. Unified health layer."</p>
-                    <button class="text-blue-400 font-black text-[10px] uppercase tracking-widest text-left font-bold group-hover:translate-x-2 transition-transform">Live System →</button>
+                    <h3 class="text-xl font-black text-white mb-3 tracking-tighter leading-tight text-left uppercase">Aditya Hospital</h3>
+                    <p class="text-slate-400 text-[10px] font-medium mb-6 italic text-left tracking-tight">"Wait times reduced by 40% via WhatsApp appointment engine."</p>
+                    <button class="text-blue-500 font-black text-[9px] uppercase tracking-widest text-left">Request Demo →</button>
                 </div>
 
-                <!-- Case Study 2: StyleQR (Link Updated to SaaS Vercel) -->
-                <div class="glass-card p-10 rounded-[4rem] group cursor-pointer text-left border-blue-500/20" onclick="window.open('https://styleqr-saas.vercel.app/', '_blank')">
-                    <div class="aspect-video bg-slate-900 rounded-[2rem] mb-10 overflow-hidden relative border border-white/10 flex items-center justify-center">
-                         <span class="text-6xl group-hover:scale-110 transition-transform">🍕</span>
-                         <div class="absolute top-6 right-6 px-3 py-1 bg-blue-600 text-white text-[8px] rounded-full tracking-widest">WHITELABEL SaaS</div>
+                <!-- Case Study 2: StyleQR -->
+                <div class="glass-card p-8 rounded-[3rem] group cursor-pointer text-left border-blue-500/20" onclick="window.open('https://styleqr.com', '_blank')">
+                    <div class="aspect-video bg-slate-900 rounded-[2rem] mb-8 overflow-hidden relative border border-white/10 flex items-center justify-center">
+                         <span class="text-5xl group-hover:scale-110 transition-transform">🍕</span>
+                         <div class="absolute top-4 right-4 px-3 py-1 bg-blue-600 text-white text-[7px] rounded-full tracking-widest">SaaS LIVE</div>
                     </div>
-                    <h3 class="text-2xl font-black text-white mb-4 tracking-tighter leading-tight text-left">StyleQR Restaurant OS</h3>
-                    <p class="text-slate-400 text-xs font-medium mb-8 italic text-left tracking-tight">"Whitelabel QR ordering & payment hub for restaurants in Tier-2 Bharat."</p>
-                    <button class="text-blue-500 font-black text-[10px] uppercase tracking-widest text-left font-bold">Visit Live →</button>
+                    <h3 class="text-xl font-black text-white mb-3 tracking-tighter leading-tight text-left uppercase">StyleQR Restaurant</h3>
+                    <p class="text-slate-400 text-[10px] font-medium mb-6 italic text-left tracking-tight">"Whitelabel QR ordering hub for restaurants in Tier-2 Bharat."</p>
+                    <button class="text-blue-500 font-black text-[9px] uppercase tracking-widest text-left">Visit Live →</button>
                 </div>
 
-                <!-- Case Study 3: ShahdolBazaar -->
-                <div class="glass-card p-10 rounded-[4rem] group cursor-pointer text-left" onclick="window.open('https://shahdolbazaar.com', '_blank')">
-                    <div class="aspect-video bg-slate-900 rounded-[2rem] mb-10 overflow-hidden relative border border-white/10 flex items-center justify-center">
-                         <span class="text-6xl group-hover:scale-110 transition-transform">🛒</span>
-                         <div class="absolute bottom-6 left-6 right-6 h-1 w-full bg-blue-400 rounded-full"></div>
+                <!-- Case Study: Apna Chhattisgarh News (UPDATED) -->
+                <div class="glass-card p-8 rounded-[3rem] group cursor-pointer text-left border-orange-500/20" onclick="window.open('https://youtube.com/@ApnaChhattisgarh-p6d', '_blank')">
+                    <div class="aspect-video bg-slate-900 rounded-[2rem] mb-8 overflow-hidden relative border border-white/10 flex items-center justify-center">
+                         <span class="text-5xl group-hover:scale-110 transition-transform">📰</span>
+                         <div class="absolute top-4 right-4 px-3 py-1 bg-red-600 text-white text-[7px] rounded-full tracking-widest font-black">YOUTUBE LIVE</div>
                     </div>
-                    <h3 class="text-2xl font-black text-white mb-4 tracking-tighter leading-tight text-left uppercase">ShahdolBazaar</h3>
-                    <p class="text-slate-400 text-xs font-medium mb-8 italic text-left tracking-tight">"Hyperlocal engine supporting 8 languages & global currency scalability."</p>
-                    <button class="text-blue-400 font-black text-[10px] uppercase tracking-widest text-left font-bold">Marketplace Hub →</button>
+                    <h3 class="text-xl font-black text-white mb-3 tracking-tighter leading-tight text-left uppercase text-orange-400">Apna Chhattisgarh News</h3>
+                    <p class="text-slate-400 text-[10px] font-medium mb-6 italic text-left tracking-tight">"Chhattisgarh's fastest digital news platform with hyper-local reach."</p>
+                    <button class="text-orange-500 font-black text-[9px] uppercase tracking-widest text-left font-bold">Watch Latest →</button>
+                </div>
+
+                <!-- Case Study 4: ShahdolBazaar -->
+                <div class="glass-card p-8 rounded-[3rem] group cursor-pointer text-left" onclick="window.open('https://shahdolbazaar.com', '_blank')">
+                    <div class="aspect-video bg-slate-900 rounded-[2rem] mb-8 overflow-hidden relative border border-white/10 flex items-center justify-center">
+                         <span class="text-5xl group-hover:scale-110 transition-transform">🛒</span>
+                         <div class="absolute bottom-4 left-4 right-4 h-1 w-full bg-blue-400 rounded-full"></div>
+                    </div>
+                    <h3 class="text-xl font-black text-white mb-3 tracking-tighter leading-tight text-left uppercase">ShahdolBazaar</h3>
+                    <p class="text-slate-400 text-[10px] font-medium mb-6 italic text-left tracking-tight">"Hyperlocal engine supporting local vendors & commerce."</p>
+                    <button class="text-blue-400 font-black text-[9px] uppercase tracking-widest text-left">Explore Hub →</button>
                 </div>
             </div>
 
             <!-- Tiny Metrics Box -->
-            <div class="grid grid-cols-3 gap-6 mt-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
                 <div class="glass-card p-8 rounded-[2rem] text-center border-blue-500/10">
-                    <p class="text-4xl font-black text-blue-400 mb-2">3+</p>
-                    <p class="text-[10px] text-slate-500 uppercase tracking-widest">Live Products</p>
+                    <p class="text-4xl font-black text-blue-400 mb-2">4+</p>
+                    <p class="text-[10px] text-slate-500 uppercase tracking-widest">Live Verticals</p>
                 </div>
                 <div class="glass-card p-8 rounded-[2rem] text-center border-emerald-500/10">
-                    <p class="text-4xl font-black text-emerald-400 mb-2">50+</p>
-                    <p class="text-[10px] text-slate-500 uppercase tracking-widest">Businesses</p>
+                    <p class="text-4xl font-black text-emerald-400 mb-2">100+</p>
+                    <p class="text-[10px] text-slate-500 uppercase tracking-widest">Partners</p>
+                </div>
+                <div class="glass-card p-8 rounded-[2rem] text-center border-orange-500/10">
+                    <p class="text-4xl font-black text-orange-400 mb-2">LIVE</p>
+                    <p class="text-[10px] text-slate-500 uppercase tracking-widest">News Reach</p>
                 </div>
                 <div class="glass-card p-8 rounded-[2rem] text-center border-purple-500/10">
                     <p class="text-4xl font-black text-purple-400 mb-2">2026</p>
@@ -277,22 +290,22 @@
         </div>
     </section>
 
-    <!-- Product Stack Bento -->
+    <!-- Products Bento -->
     <section id="ecosystem" class="py-40 px-8 bg-slate-950/50 text-left">
         <div class="max-w-7xl mx-auto">
             <div class="mb-32">
-                <h2 class="text-7xl font-black text-white mb-6 tracking-tighter uppercase text-left">The Product Stack.</h2>
+                <h2 class="text-7xl font-black text-white mb-6 tracking-tighter uppercase text-left">Product Stack.</h2>
                 <div class="w-24 h-1.5 bg-blue-600 rounded-full mb-8"></div>
-                <p class="text-slate-500 font-black uppercase tracking-[0.4em] text-[11px] font-bold uppercase tracking-widest">Modular SaaS Infrastructure</p>
+                <p class="text-slate-500 font-black uppercase tracking-[0.4em] text-[11px] font-bold uppercase tracking-widest">Scalable SaaS Architecture</p>
             </div>
 
             <div class="bento-grid">
                 <!-- Admin Hub -->
-                <div class="glass-card p-12 rounded-[4rem] bg-gradient-to-br from-purple-600/10 to-transparent flex flex-col justify-between group h-[480px] text-left cursor-pointer" onclick="chatRedirect('Admin_Hub_Inquiry')">
+                <div class="glass-card p-12 rounded-[4rem] bg-gradient-to-br from-purple-600/10 to-transparent flex flex-col justify-between group h-[480px] text-left cursor-pointer">
                     <div class="text-left font-bold uppercase">
                         <div class="flex justify-between items-start mb-16">
                             <div class="w-16 h-16 bg-purple-600 rounded-3xl flex items-center justify-center text-4xl shadow-2xl">📊</div>
-                            <span class="px-5 py-2 rounded-full bg-purple-500/20 text-purple-400 text-[10px] font-black uppercase tracking-widest uppercase">Admin Hub</span>
+                            <span class="px-5 py-2 rounded-full bg-purple-500/20 text-purple-400 text-[10px] font-black uppercase tracking-widest">Admin Hub</span>
                         </div>
                         <h3 class="text-3xl font-black text-white mb-6 tracking-tighter uppercase leading-none">Unified OS</h3>
                         <p class="text-slate-400 text-xs leading-relaxed mb-6 uppercase tracking-widest">Lead Dashboard, Order CRM, and centralized management for partners.</p>
@@ -300,8 +313,8 @@
                     <span class="text-purple-500 font-black text-[10px] uppercase tracking-[0.4em] font-bold">In-Dev →</span>
                 </div>
 
-                <!-- StyleQR (Link Updated to SaaS Vercel) -->
-                <div class="glass-card p-12 rounded-[4rem] bg-gradient-to-br from-blue-600/10 to-transparent flex flex-col justify-between group h-[480px] text-left border-blue-500/20 cursor-pointer" onclick="window.open('https://styleqr-saas.vercel.app/', '_blank')">
+                <!-- StyleQR -->
+                <div class="glass-card p-12 rounded-[4rem] bg-gradient-to-br from-blue-600/10 to-transparent flex flex-col justify-between group h-[480px] text-left border-blue-500/20 cursor-pointer" onclick="window.open('https://styleqr.com', '_blank')">
                     <div class="text-left font-bold uppercase">
                         <div class="flex justify-between items-start mb-16">
                             <div class="w-16 h-16 bg-blue-600 rounded-3xl flex items-center justify-center text-4xl shadow-2xl font-bold">🟦</div>
@@ -314,20 +327,20 @@
                     <span class="text-blue-500 font-black text-[10px] uppercase tracking-[0.4em] font-bold">Launch Whitelabel →</span>
                 </div>
 
-                <!-- Jewel AR Hub -->
-                <div class="glass-card p-12 rounded-[4rem] bg-gradient-to-br from-emerald-600/10 to-transparent flex flex-col justify-between group h-[480px] text-left border-emerald-500/20 relative overflow-hidden cursor-pointer" onclick="chatRedirect('Jewel_AR_Inquiry')">
+                <!-- Apna Chhattisgarh News (Media Hub) -->
+                <div class="glass-card p-12 rounded-[4rem] bg-gradient-to-br from-orange-600/10 to-transparent flex flex-col justify-between group h-[480px] text-left border-orange-500/20 relative overflow-hidden cursor-pointer" onclick="window.open('https://youtube.com/@ApnaChhattisgarh-p6d', '_blank')">
                     <div class="absolute top-0 right-0 p-8">
-                        <span class="bg-emerald-500 text-black text-[8px] px-3 py-1.5 rounded-full font-black tracking-widest">UPCOMING</span>
+                        <span class="bg-orange-500 text-black text-[8px] px-3 py-1.5 rounded-full font-black tracking-widest">LIVE SCALE</span>
                     </div>
                     <div class="text-left font-bold uppercase">
                         <div class="flex justify-between items-start mb-16">
-                            <div class="w-16 h-16 bg-emerald-600 rounded-3xl flex items-center justify-center text-4xl shadow-2xl font-bold">💎</div>
-                            <span class="px-5 py-2 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-black uppercase tracking-widest uppercase">Jewelry Tech</span>
+                            <div class="w-16 h-16 bg-orange-600 rounded-3xl flex items-center justify-center text-4xl shadow-2xl font-bold">📡</div>
+                            <span class="px-5 py-2 rounded-full bg-orange-500/20 text-orange-400 text-[10px] font-black uppercase tracking-widest uppercase">Media Hub</span>
                         </div>
-                        <h3 class="text-3xl font-black text-white mb-4 tracking-tighter uppercase leading-none">Jewel AR Hub</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed mb-10 uppercase tracking-widest tracking-tighter">India's First Virtual Showroom & AR Try-on engine for MSMEs.</p>
+                        <h3 class="text-3xl font-black text-white mb-4 tracking-tighter uppercase leading-none">Apna Chhattisgarh News</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-10 uppercase tracking-widest tracking-tighter">Our flagship digital news platform and video infrastructure for the heartland.</p>
                     </div>
-                    <span class="text-emerald-500 font-black text-[10px] uppercase tracking-[0.4em] font-bold">Waitlist →</span>
+                    <span class="text-orange-500 font-black text-[10px] uppercase tracking-[0.4em] font-bold">Visit Channel →</span>
                 </div>
             </div>
         </div>
@@ -341,36 +354,36 @@
                 <h2 class="text-7xl font-black text-white tracking-tighter uppercase">₹50,000 Cr+ TAM.</h2>
                 <p class="text-slate-400 max-w-3xl mt-10 text-xl font-medium tracking-tight normal-case leading-relaxed">
                     India’s MSME digitization is accelerating post-UPI & WhatsApp adoption. 
-                    Lav Digital captures this inflection by delivering ultra-light SaaS for Tier-2 Bharat.
+                    Lav Digital captures this inflection by delivering ultra-light SaaS & News Media Hubs for Tier-2 Bharat.
                 </p>
             </div>
             
             <div class="grid lg:grid-cols-4 gap-8">
                 <div class="glass-card p-10 rounded-[3rem] border-blue-500/20">
                     <p class="text-4xl font-black text-white mb-4">400M</p>
-                    <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest uppercase">Heartland Population</p>
+                    <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Tier-2 Population</p>
                 </div>
                 <div class="glass-card p-10 rounded-[3rem] border-blue-500/20">
                     <p class="text-4xl font-black text-white mb-4">60M</p>
-                    <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest uppercase">MSME Nodes</p>
+                    <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">MSME Nodes</p>
                 </div>
                 <div class="glass-card p-10 rounded-[3rem] border-blue-500/20 bg-blue-600/5">
                     <p class="text-4xl font-black text-blue-400 mb-4">₹300 Cr</p>
-                    <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest uppercase">Target (Phase 1)</p>
+                    <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Target (Phase 1)</p>
                 </div>
                 <div class="glass-card p-10 rounded-[3rem] border-emerald-500/20">
-                    <p class="text-4xl font-black text-emerald-400 mb-4">10,000</p>
-                    <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest uppercase">Nodes</p>
+                    <p class="text-4xl font-black text-emerald-400 mb-4">25,000</p>
+                    <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Target Users</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Strategic Roadmap -->
+    <!-- Roadmap -->
     <section id="roadmap" class="py-40 px-8 relative bg-black/40 border-y border-white/[0.05]">
         <div class="max-w-7xl mx-auto text-left font-bold uppercase">
             <div class="mb-24">
-                <span class="text-purple-400 font-black uppercase tracking-[0.4em] text-[10px] mb-4 block font-bold uppercase tracking-widest">Mukaam (Roadmap)</span>
+                <span class="text-purple-400 font-black uppercase tracking-[0.4em] text-[10px] mb-4 block font-bold uppercase tracking-widest">Execution Roadmap</span>
                 <h2 class="text-6xl font-black text-white tracking-tighter uppercase">Growth Path.</h2>
             </div>
             
@@ -379,14 +392,14 @@
                     <div class="text-5xl font-black text-purple-500 tracking-tighter font-bold uppercase">2026</div>
                     <div class="flex-1 text-left font-bold uppercase">
                         <h4 class="text-2xl font-black text-white mb-4 uppercase">Infrastructure Completion</h4>
-                        <p class="text-slate-400 font-medium tracking-tight">Full whitelabel launch of StyleQR, ShahdolBazaar Global MVP, and 10 partner nodes in MP/CG.</p>
+                        <p class="text-slate-400 font-medium tracking-tight">Full whitelabel launch of StyleQR, Apna Chhattisgarh News Scaling, and 10 partner nodes in MP/CG.</p>
                     </div>
                 </div>
                 <div class="glass-card p-12 rounded-[4rem] flex flex-col md:flex-row gap-12 items-center border-blue-500/20 bg-blue-600/5">
                     <div class="text-5xl font-black text-blue-400 tracking-tighter font-bold uppercase">2027</div>
                     <div class="flex-1 text-left font-bold uppercase">
                         <h4 class="text-2xl font-black text-white mb-4 uppercase tracking-tighter">National Scaling</h4>
-                        <p class="text-slate-400 font-medium tracking-tight">Expansion to 100 cities with 25,000 vendors using LAV Growth OS. NDSSP Registry live.</p>
+                        <p class="text-slate-400 font-medium tracking-tight">Expansion to 100 cities with 25,000 vendors using LAV Growth OS. Media engine integration live.</p>
                     </div>
                 </div>
             </div>
@@ -412,19 +425,19 @@
                         <p class="text-blue-400 font-black text-sm uppercase tracking-[0.4em] font-bold uppercase">Founder & Systems Architect</p>
                     </div>
                     <p class="text-2xl text-slate-400 leading-relaxed font-medium max-w-3xl uppercase tracking-tighter">
-                        Building Bharat's digital infrastructure for 10+ years. I research and deploy whitelabel OS for Tier-2 MSMEs.
+                        Building Bharat's digital infrastructure & Media Hubs for 10+ years. I research and deploy whitelabel OS for Tier-2 MSMEs.
                     </p>
                     <div class="flex flex-wrap gap-5">
-                        <div class="px-8 py-4 bg-white/5 border border-white/10 rounded-full text-white text-[10px] font-black uppercase tracking-widest font-bold">10,000 Node Goal</div>
-                        <div class="px-8 py-4 bg-blue-600/10 border border-blue-600/20 rounded-full text-blue-400 text-[10px] font-black uppercase tracking-widest font-bold uppercase">Infrastructure Lead</div>
+                        <div class="px-8 py-4 bg-white/5 border border-white/10 rounded-full text-white text-[10px] font-black tracking-widest font-bold">25,000 Node Goal</div>
+                        <div class="px-8 py-4 bg-blue-600/10 border border-blue-600/20 rounded-full text-blue-400 text-[10px] font-black tracking-widest font-bold uppercase">Infrastructure Lead</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seed Round Section -->
-    <section id="contact" class="py-40 px-8 relative overflow-hidden text-left uppercase font-bold tracking-widest uppercase">
+    <!-- Strategic Seed Round Section -->
+    <section id="contact" class="py-40 px-8 relative overflow-hidden text-left uppercase font-bold tracking-widest">
         <div class="max-w-7xl mx-auto text-left">
             <div class="glass-card p-16 md:p-32 rounded-[6rem] border-blue-500/20 shadow-2xl relative z-10 bg-gradient-to-br from-blue-900/10 to-transparent">
                 <div class="grid lg:grid-cols-2 gap-32 font-bold uppercase">
@@ -452,7 +465,7 @@
                                     Registered Startup
                                 </span>
                             </div>
-                            <p class="text-xs font-black uppercase tracking-widest text-emerald-400 leading-relaxed font-bold uppercase tracking-widest">
+                            <p class="text-xs font-black uppercase tracking-widest text-emerald-400 leading-relaxed font-bold tracking-widest text-left">
                                 MSME Registered Technology Services Startup (Govt. of India)
                             </p>
                         </div>
@@ -460,7 +473,7 @@
                         <p class="text-xl text-slate-400 mb-20 leading-relaxed font-black tracking-tighter uppercase tracking-tight">Building whitelabel SaaS for the heartland of India. Angel participation welcome.</p>
                         
                         <div class="space-y-16">
-                            <div class="flex items-center gap-10 group cursor-pointer" onclick="window.open('https://wa.me/919753239303', '_blank')">
+                            <div class="flex items-center gap-10 group cursor-pointer" onclick="toggleChat()">
                                 <div class="w-20 h-20 bg-blue-600 rounded-[2.5rem] flex items-center justify-center text-5xl group-hover:scale-110 transition-transform shadow-2xl">📱</div>
                                 <div class="text-left">
                                     <h4 class="font-black text-white uppercase text-[11px] tracking-widest mb-2 font-bold tracking-widest">Founder Direct</h4>
@@ -479,6 +492,7 @@
                             <select id="form-platform" class="w-full p-6 bg-slate-900 border border-white/10 rounded-[2rem] text-sm text-white appearance-none outline-none focus:border-blue-500 cursor-pointer uppercase font-bold tracking-widest">
                                 <option>Investment Query</option>
                                 <option>Whitelabel Partnership</option>
+                                <option>Apna Chhattisgarh News Query</option>
                                 <option>Restaurant OS Demo</option>
                                 <option>General Inquiry</option>
                             </select>
@@ -494,8 +508,8 @@
     <footer class="py-32 px-8 border-t border-white/[0.05] bg-black text-left uppercase font-bold tracking-tight">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-20 text-center md:text-left font-bold">
             <div class="text-left font-bold uppercase">
-                <div class="flex items-center gap-4 mb-10 justify-center md:justify-start uppercase">
-                    <div class="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center font-black text-white text-xl shadow-xl border border-white/10 uppercase">
+                <div class="flex items-center gap-4 mb-10 justify-center md:justify-start">
+                    <div class="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center font-black text-white text-xl shadow-xl border border-white/10">
                          <svg viewBox="0 0 100 100" class="w-10 h-10">
                             <path d="M30 20 Q70 20 80 50 Q70 80 30 80 L30 70 Q60 70 70 50 Q60 30 30 30 Z" fill="#0066FF" opacity="0.9"/>
                             <path d="M25 20 L35 20 L35 70 L60 70 L60 80 L25 80 Z" fill="#E2E8F0"/>
@@ -510,12 +524,10 @@
                     © 2026 Lav Kumar Soni. All Rights Reserved.
                 </p>
 
-                <!-- Legal Identity Micro Footer -->
                 <p class="text-[9px] text-slate-600 uppercase tracking-widest mt-4">
                     LAV DIGITAL — Proprietorship MSME | UDYAM Registered | India
                 </p>
 
-                <!-- MSME Trust Badge Footer -->
                 <div class="flex items-center gap-3 mt-8 font-bold">
                     <svg width="120" height="34" viewBox="0 0 160 44" xmlns="http://www.w3.org/2000/svg" class="opacity-50 hover:opacity-100 transition-opacity font-bold uppercase">
                         <defs>
@@ -532,17 +544,14 @@
                             GOVT VERIFIED
                         </text>
                     </svg>
-                    <span class="text-[8px] font-black tracking-widest text-slate-600 uppercase tracking-widest">
-                        Govt. Certified
-                    </span>
                 </div>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-24 text-[10px] font-black uppercase tracking-[0.4em] text-slate-500 text-left font-bold tracking-widest">
                 <div class="flex flex-col gap-6 text-left font-bold uppercase">
                     <p class="text-white mb-2 text-left font-black tracking-widest font-bold uppercase tracking-widest">Live SaaS</p>
-                    <a href="https://styleqr-saas.vercel.app/" target="_blank" class="hover:text-blue-400 transition text-left font-bold uppercase tracking-widest">StyleQR Restaurant</a>
+                    <a href="https://styleqr.com" target="_blank" class="hover:text-blue-400 transition text-left font-bold uppercase tracking-widest">StyleQR Restaurant</a>
                     <a href="https://shahdolbazaar.com" target="_blank" class="hover:text-blue-400 transition text-left font-bold uppercase tracking-widest">Bazaar Marketplace</a>
-                    <a href="#ecosystem" class="hover:text-blue-400 transition text-left font-bold tracking-widest text-emerald-400">Jewel AR Hub</a>
+                    <a href="https://youtube.com/@ApnaChhattisgarh-p6d" target="_blank" class="hover:text-orange-400 transition text-left font-bold tracking-widest text-orange-400">Apna Chhattisgarh News</a>
                 </div>
                 <div class="flex flex-col gap-6 text-left font-bold uppercase">
                     <p class="text-white mb-2 text-left font-black tracking-widest font-bold uppercase tracking-widest">Investor</p>
@@ -550,7 +559,7 @@
                     <a href="#market" class="hover:text-blue-400 transition text-left font-bold uppercase tracking-widest">Market TAM</a>
                 </div>
                 <div class="flex flex-col gap-6 text-left font-bold uppercase">
-                    <p class="text-white mb-2 text-left font-black tracking-widest font-bold uppercase tracking-widest">Connect</p>
+                    <p class="text-white mb-2 text-left font-black tracking-widest font-bold uppercase tracking-widest">Support</p>
                     <a href="https://wa.me/919753239303" target="_blank" class="hover:text-blue-400 transition font-bold uppercase tracking-widest">Founder Desk</a>
                 </div>
             </div>
@@ -567,12 +576,6 @@
     <script>
         function toggleChat() {
             window.open('https://wa.me/919753239303?text=Hi%20Lav,%20I%20am%20reviewing%20the%20LAV%20DIGITAL%202026%20Growth%20OS%20Pitch.%20Let\'s%20connect.', '_blank');
-        }
-
-        // Handle button clicks with WhatsApp redirection
-        function chatRedirect(type) {
-            let msg = encodeURIComponent(`Hi Lav, I'm reaching out regarding ${type} from the 2026 Portal.`);
-            window.open(`https://wa.me/919753239303?text=${msg}`, '_blank');
         }
 
         function handleContact(e) {
