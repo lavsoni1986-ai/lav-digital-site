@@ -69,8 +69,21 @@
             @apply px-2 py-0.5 rounded bg-white/10 text-[10px] font-bold uppercase tracking-tight text-slate-300 border border-white/5;
         }
 
+        .skill-tag {
+            @apply px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-wider text-slate-400;
+        }
+
         .section-padding {
             @apply py-20 md:py-32 px-6;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
         }
     </style>
 </head>
@@ -82,7 +95,7 @@
             <div class="flex items-center gap-3">
                 <div class="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center font-black text-black text-lg shadow-lg shadow-amber-500/20">L</div>
                 <div class="flex flex-col leading-none">
-                    <span class="font-extrabold text-xl tracking-tighter uppercase">LAV DIGITAL</span>
+                    <span class="font-extrabold text-xl tracking-tighter uppercase text-white">LAV DIGITAL</span>
                     <span class="text-[9px] font-bold text-amber-500 tracking-[0.2em] uppercase mt-1">Tier-2 Digital Infra</span>
                 </div>
             </div>
@@ -146,20 +159,20 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="text-center">
-                    <span class="block text-4xl md:text-5xl font-black text-amber-500 mb-2">50+</span>
-                    <span class="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Live Restaurants</span>
+                    <span class="block text-4xl md:text-5xl font-black text-amber-500 mb-2">PoC</span>
+                    <span class="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Stage: Proof of Concept</span>
                 </div>
                 <div class="text-center">
-                    <span class="block text-4xl md:text-5xl font-black text-white mb-2">8k+</span>
-                    <span class="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Monthly Orders</span>
+                    <span class="block text-4xl md:text-5xl font-black text-white mb-2">10+</span>
+                    <span class="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Years Media Experience</span>
                 </div>
                 <div class="text-center">
-                    <span class="block text-4xl md:text-5xl font-black text-cyan-400 mb-2">₹15L+</span>
-                    <span class="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Facilitated GMV</span>
+                    <span class="block text-4xl md:text-5xl font-black text-cyan-400 mb-2">DSSL</span>
+                    <span class="text-[10px] uppercase font-bold text-slate-500 tracking-widest">National Vision</span>
                 </div>
                 <div class="text-center">
-                    <span class="block text-4xl md:text-5xl font-black text-green-500 mb-2">95%</span>
-                    <span class="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Merchant Retention</span>
+                    <span class="block text-4xl md:text-5xl font-black text-green-500 mb-2">LIVE</span>
+                    <span class="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Nai Dunia Feature</span>
                 </div>
             </div>
         </div>
@@ -218,7 +231,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full lg:w-auto">
                     <div class="glass-card p-8 rounded-2xl text-center">
                         <span class="text-xl font-black text-white block">DB GROUP</span>
-                        <span class="text-[9px] uppercase font-bold text-slate-500">Ex-Brand Lead</span>
+                        <span class="text-[9px] uppercase font-bold text-slate-500">Ex-Senior Management Associate, Ad Sales</span>
                     </div>
                     <div class="glass-card p-8 rounded-2xl text-center">
                         <span class="text-xl font-black text-white block tracking-widest">PATRIKA</span>
@@ -261,7 +274,7 @@
                 <div class="glass-card p-12 rounded-[3rem] group">
                     <div class="flex justify-between items-start mb-10">
                         <div class="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center border border-blue-500/20 group-hover:bg-blue-500/20 transition-all">
-                            <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                            <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z\"></path></svg>
                         </div>
                         <div class="flex flex-col items-end gap-2 text-right">
                             <span class="os-badge border-blue-500/30 text-blue-500">Hyperlocal B2C</span>
@@ -314,7 +327,7 @@
         <div class="max-w-7xl mx-auto px-6 text-center lg:text-left">
             <div class="flex flex-col lg:flex-row justify-between items-center gap-12 mb-16">
                 <div>
-                    <span class="font-black text-3xl tracking-tighter uppercase leading-none">LAV DIGITAL</span>
+                    <span class="font-black text-3xl tracking-tighter uppercase leading-none text-white">LAV DIGITAL</span>
                     <span class="text-[10px] text-slate-500 font-bold uppercase tracking-[0.3em] mt-2 block">Building for the Real Bharat from Shahdol</span>
                 </div>
                 
