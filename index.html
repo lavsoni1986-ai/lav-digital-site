@@ -4,597 +4,342 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Meta Tags for SEO & Social Sharing -->
-    <title>LAV DIGITAL | Bharat's MSME Operating System</title>
-    <meta name="description" content="Lav Kumar Soni's Research & Systems. Enterprise-grade digital infrastructure for Tier-2 & Tier-3 India.">
-    <meta property="og:title" content="LAV DIGITAL | Bharat's Growth OS">
-    <meta property="og:description" content="Digitizing 60 Million MSMEs with NDSSP-verified trust. Building Bharat's Digital Infrastructure.">
-    <meta property="og:type" content="website">
+    <!-- SEO & Social Meta Tags -->
+    <title>LAV KUMAR SONI | Building Bharat's Digital Infrastructure</title>
+    <meta name="description" content="Founder of StyleQR & BharatOS. Building a Tier-2 digital ecosystem from Shahdol. Ex-Media Expert (DB Group, Patrika).">
     
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Lav Kumar Soni | Digital Infrastructure Builder">
+    <meta property="og:description" content="Architecting the digital future of Tier-2 India. 10 years of Media trust meets modern Engineering.">
+    <meta property="og:image" content="https://lavdigital.in/preview.jpg"> <!-- Replace with real image later -->
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-deep: #000212;
-            --accent-blue: #0066FF;
-            --accent-green: #00F5A0;
+            --bg-deep: #030303;
+            --accent-gold: #FFB800;
+            --accent-cyan: #00F0FF;
             --glass-bg: rgba(255, 255, 255, 0.02);
-            --border-white: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.07);
         }
-        body { 
-            font-family: 'Inter', sans-serif; 
+
+        body {
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg-deep);
-            color: #E2E8F0;
+            color: #f8fafc;
             overflow-x: hidden;
+            line-height: 1.6;
         }
-        h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; }
-        
-        .mesh-bg {
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(0, 102, 255, 0.15) 0, transparent 50%), 
-                radial-gradient(at 100% 100%, rgba(0, 245, 160, 0.1) 0, transparent 50%);
+
+        h1, h2, h3, h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #FFD700 0%, #FF8C00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cyan-gradient {
+            background: linear-gradient(135deg, #00F0FF 0%, #0080FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .glass-card {
             background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--border-white);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .glass-card:hover {
-            border-color: rgba(0, 102, 255, 0.5);
+            border-color: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.04);
             transform: translateY(-8px);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 20px 40px -20px rgba(0,0,0,0.5);
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #0066FF 0%, #0044BB 100%);
-            box-shadow: 0 10px 40px rgba(0, 102, 255, 0.4);
+        .os-badge {
+            @apply px-2 py-0.5 rounded bg-white/10 text-[10px] font-bold uppercase tracking-tight text-slate-300 border border-white/5;
         }
 
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #000212; }
-        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
-
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-
-        @media (max-width: 1024px) { .bento-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 640px) { .bento-grid { grid-template-columns: 1fr; } }
-        
-        .chat-pulse { animation: pulse-blue 2s infinite; }
-        @keyframes pulse-blue {
-            0% { box-shadow: 0 0 0 0 rgba(0, 102, 255, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(0, 102, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 102, 255, 0); }
+        .section-padding {
+            @apply py-20 md:py-32 px-6;
         }
     </style>
 </head>
-<body class="antialiased mesh-bg min-h-screen font-bold uppercase tracking-tight">
+<body class="antialiased">
 
-    <!-- Success Toast -->
-    <div id="success-toast" class="fixed top-24 right-8 z-[500] hidden">
-        <div class="glass-card bg-emerald-500/20 border-emerald-500/50 p-6 rounded-3xl flex items-center gap-4">
-            <span class="text-4xl">🚀</span>
-            <div class="text-left">
-                <p class="text-lg font-black text-white leading-tight tracking-widest">Inquiry Received</p>
-                <p class="text-xs text-emerald-400 font-bold tracking-[0.2em] text-left">Connecting to Strategic Hub...</p>
+    <!-- Navigation -->
+    <header class="fixed w-full z-50 top-0 border-b border-white/5 bg-[#030303]/80 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center font-black text-black text-lg shadow-lg shadow-amber-500/20">L</div>
+                <div class="flex flex-col leading-none">
+                    <span class="font-extrabold text-xl tracking-tighter uppercase">LAV DIGITAL</span>
+                    <span class="text-[9px] font-bold text-amber-500 tracking-[0.2em] uppercase mt-1">Tier-2 Digital Infra</span>
+                </div>
+            </div>
+            <nav class="hidden lg:flex gap-10 text-[11px] font-bold uppercase tracking-widest text-slate-400">
+                <a href="#traction" class="hover:text-white transition-colors">Traction</a>
+                <a href="#concept" class="hover:text-white transition-colors">The Framework</a>
+                <a href="#work" class="hover:text-white transition-colors">Products</a>
+                <a href="#media" class="hover:text-white transition-colors">Experience</a>
+                <a href="#invest" class="text-amber-500 hover:text-amber-400">Pitch</a>
+            </nav>
+            <a href="https://wa.me/919753239303" class="bg-white text-black px-7 py-2.5 rounded-full text-xs font-black uppercase hover:scale-105 transition-transform active:scale-95 shadow-lg shadow-white/10">
+                Connect
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-40 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden min-h-screen flex items-center">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/10 blur-[130px] rounded-full -mr-48 -mt-48 opacity-50"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-500/10 blur-[130px] rounded-full -ml-48 -mb-48 opacity-50"></div>
+        
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-slate-300 text-[10px] font-bold tracking-[0.2em] uppercase mb-10">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Active Presence: Shahdol, MP
+            </div>
+            
+            <h1 class="text-5xl md:text-9xl font-black mb-10 leading-[1] md:leading-[0.85] tracking-tighter">
+                Infrastructure <br/>
+                <span class="gold-gradient italic font-serif text-6xl md:text-[10rem]">for Bharat.</span>
+            </h1>
+            
+            <p class="text-lg md:text-2xl text-slate-400 mb-16 max-w-3xl mx-auto leading-relaxed font-light">
+                One laptop, 10 years of Media Trust, and 100% Bootstrapped Engineering. 
+                Building the <span class="text-white font-semibold italic">BharatOS Framework</span>—a digital ecosystem 
+                designed for the specific needs of Tier-2 India.
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
+                <div class="glass-card p-6 rounded-2xl border-b-4 border-amber-500/50">
+                    <div class="text-2xl md:text-3xl font-black text-white mb-1">Q1 2026</div>
+                    <div class="text-[9px] uppercase tracking-widest text-slate-500 font-bold">Execution Phase</div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="text-2xl md:text-3xl font-black text-cyan-400 mb-1 tracking-tighter">DSSL</div>
+                    <div class="text-[9px] uppercase tracking-widest text-slate-500 font-bold">Risk Lab</div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="text-2xl md:text-3xl font-black text-white mb-1 tracking-tighter">50+</div>
+                    <div class="text-[9px] uppercase tracking-widest text-slate-500 font-bold">Local Partners</div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl border-b-4 border-blue-500/50">
+                    <div class="text-2xl md:text-3xl font-black text-blue-400 mb-1 tracking-tighter">NEXT.JS</div>
+                    <div class="text-[9px] uppercase tracking-widest text-slate-500 font-bold">Production Code</div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Main Navigation -->
-    <nav class="fixed top-0 w-full z-[400] border-b border-white/[0.05] bg-black/70 backdrop-blur-3xl">
-        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
-            
-            <div class="flex items-center gap-4 group cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center shadow-2xl group-hover:scale-110 transition-all border border-white/10 relative overflow-hidden">
-                        <svg viewBox="0 0 100 100" class="w-10 h-10">
-                            <path d="M30 20 Q70 20 80 50 Q70 80 30 80 L30 70 Q60 70 70 50 Q60 30 30 30 Z" fill="#0066FF" opacity="0.9"/>
-                            <path d="M25 20 L35 20 L35 70 L60 70 L60 80 L25 80 Z" fill="#E2E8F0"/>
-                            <circle cx="50" cy="50" r="10" fill="url(#sun-glow)">
-                                <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" />
-                            </circle>
-                            <defs>
-                                <radialGradient id="sun-glow">
-                                    <stop offset="0%" stop-color="#FFD700" />
-                                    <stop offset="100%" stop-color="#FF4500" />
-                                </radialGradient>
-                            </defs>
-                        </svg>
+    <!-- TRACTION SNAPSHOT (Investor Section) -->
+    <section id="traction" class="py-16 px-6 relative border-t border-white/5 bg-white/[0.01]">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <span class="block text-4xl md:text-5xl font-black text-amber-500 mb-2">50+</span>
+                    <span class="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Live Restaurants</span>
+                </div>
+                <div class="text-center">
+                    <span class="block text-4xl md:text-5xl font-black text-white mb-2">8k+</span>
+                    <span class="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Monthly Orders</span>
+                </div>
+                <div class="text-center">
+                    <span class="block text-4xl md:text-5xl font-black text-cyan-400 mb-2">₹15L+</span>
+                    <span class="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Facilitated GMV</span>
+                </div>
+                <div class="text-center">
+                    <span class="block text-4xl md:text-5xl font-black text-green-500 mb-2">95%</span>
+                    <span class="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Merchant Retention</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE FRAMEWORK (CONCEPT) -->
+    <section id="concept" class="section-padding relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-24">
+                <span class="gold-gradient font-black tracking-[0.4em] text-[11px] uppercase mb-6 block">Strategic Framework</span>
+                <h2 class="text-5xl md:text-7xl font-black mb-8 uppercase tracking-tighter italic">The BharatOS Core</h2>
+                <p class="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">Infrastructure that bridges the gap between traditional Kirana and high-tech digital efficiency.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Layer 1 -->
+                <div class="glass-card p-10 rounded-[2.5rem] relative group">
+                    <h4 class="text-amber-500 font-black text-xs uppercase mb-6 tracking-widest">Trust Pillar</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Built on a decade of on-ground experience at <span class="text-white">Patrika & DB Group</span>. We understand the user before the user understands the app.</p>
+                </div>
+                <!-- Layer 2 -->
+                <div class="glass-card p-10 rounded-[2.5rem] relative group">
+                    <h4 class="text-blue-400 font-black text-xs uppercase mb-6 tracking-widest">Engineering</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Lightweight, low-latency stack using <span class="text-white">Next.js 15</span>. Optimized for Bharat's diverse hardware and network spectrum.</p>
+                </div>
+                <!-- Layer 3 -->
+                <div class="glass-card p-10 rounded-[2.5rem] relative group border-cyan-500/20">
+                    <h4 class="text-cyan-400 font-black text-xs uppercase mb-6 tracking-widest">DSSL Lab</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Research-driven advisory framework for <span class="text-white">early risk awareness</span>. Protecting digital first-timers from systemic fraud.</p>
+                </div>
+                <!-- Layer 4 -->
+                <div class="glass-card p-10 rounded-[2.5rem] relative group">
+                    <h4 class="text-green-400 font-black text-xs uppercase mb-6 tracking-widest">Hyperlocal</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Sustainable business models that generate revenue from Day 1. No heavy cash-burn; just <span class="text-white">Pure Utility</span>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEDIA EXPERIENCE -->
+    <section id="media" class="py-32 px-6 bg-white/[0.01] border-y border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-16">
+                <div class="max-w-2xl text-center lg:text-left">
+                    <span class="text-amber-500 font-bold uppercase tracking-widest text-[10px] mb-4 block underline underline-offset-8">Legacy Foundation</span>
+                    <h2 class="text-4xl md:text-6xl font-black mb-8 uppercase tracking-tighter leading-[0.9]">Beyond Code: <br/> The Trust Engine</h2>
+                    <p class="text-lg text-slate-400 leading-relaxed mb-6">
+                        Most developers build for "Users". I build for "Community". My years managing brands at <span class="text-white font-bold italic">Dainik Bhaskar</span> and <span class="text-white font-bold italic">Patrika</span> are the secret sauce of our product adoption.
+                    </p>
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                        <span class="skill-tag">Media Marketing</span>
+                        <span class="skill-tag">Psychological Branding</span>
+                        <span class="skill-tag">Tier-2 Strategy</span>
                     </div>
-                    <div class="flex flex-col text-left">
-                        <span class="text-2xl font-black tracking-tighter text-white leading-none uppercase">LAV <span class="text-blue-500">DIGITAL</span></span>
-                        <span class="text-[9px] text-slate-500 font-bold uppercase tracking-[0.4em] leading-none mt-1">Growth OS for Bharat</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full lg:w-auto">
+                    <div class="glass-card p-8 rounded-2xl text-center">
+                        <span class="text-xl font-black text-white block">DB GROUP</span>
+                        <span class="text-[9px] uppercase font-bold text-slate-500">Ex-Brand Lead</span>
+                    </div>
+                    <div class="glass-card p-8 rounded-2xl text-center">
+                        <span class="text-xl font-black text-white block tracking-widest">PATRIKA</span>
+                        <span class="text-[9px] uppercase font-bold text-slate-500">Marketing Expert</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ECOSYSTEM PRODUCTS -->
+    <section id="work" class="section-padding">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-6 mb-20">
+                <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter">Current Production Units</h2>
+                <div class="h-px bg-white/10 flex-grow hidden md:block"></div>
+                <span class="text-xs font-bold text-slate-500 uppercase tracking-widest">Status: Revenue Positive</span>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- StyleQR -->
+                <div class="glass-card p-12 rounded-[3rem] group">
+                    <div class="flex justify-between items-start mb-10">
+                        <div class="w-16 h-16 bg-amber-500/10 rounded-2xl flex items-center justify-center border border-amber-500/20 group-hover:bg-amber-500/20 transition-all">
+                            <svg class="w-8 h-8 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01"></path></svg>
+                        </div>
+                        <div class="flex flex-col items-end gap-2 text-right">
+                            <span class="os-badge border-amber-500/30 text-amber-500">B2B SaaS</span>
+                            <p class="text-[10px] text-slate-500 font-bold leading-tight">Solving Fine-Dining <br/> Friction</p>
+                        </div>
+                    </div>
+                    <h3 class="text-3xl font-black mb-4">StyleQR</h3>
+                    <p class="text-slate-400 mb-10 leading-relaxed">The Operating System for Shahdol's hospitality sector. A cloud-native KDS & Analytics platform helping restaurants manage staff shortage with tech.</p>
+                    <a href="https://stylerqrestaurant.in/" target="_blank" class="inline-flex items-center gap-3 text-white font-bold hover:text-amber-400 transition-all group-hover:translate-x-2">
+                        Platform Preview <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+
+                <!-- ShahdolBazaar -->
+                <div class="glass-card p-12 rounded-[3rem] group">
+                    <div class="flex justify-between items-start mb-10">
+                        <div class="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center border border-blue-500/20 group-hover:bg-blue-500/20 transition-all">
+                            <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                        </div>
+                        <div class="flex flex-col items-end gap-2 text-right">
+                            <span class="os-badge border-blue-500/30 text-blue-500">Hyperlocal B2C</span>
+                            <p class="text-[10px] text-slate-500 font-bold leading-tight">Digital Bridge for <br/> 500+ Vendors</p>
+                        </div>
+                    </div>
+                    <h3 class="text-3xl font-black mb-4">ShahdolBazaar</h3>
+                    <p class="text-slate-400 mb-10 leading-relaxed">Hyperlocal marketplace bridge connecting traditional Kirana shops to the modern digital consumer without heavy commissions.</p>
+                    <a href="https://shahdolbazaar.com" target="_blank" class="inline-flex items-center gap-3 text-white font-bold hover:text-blue-400 transition-all group-hover:translate-x-2">
+                        Open Marketplace <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INVESTOR THESIS -->
+    <section id="invest" class="section-padding border-t border-white/5 bg-gradient-to-b from-transparent to-amber-500/5">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-5xl md:text-6xl font-black mb-12 uppercase tracking-tighter italic leading-none">The Investment Thesis</h2>
+            <div class="glass-card p-10 md:p-16 rounded-[3rem] text-left relative overflow-hidden shadow-2xl">
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-amber-500/10 blur-[100px] rounded-full"></div>
+                
+                <p class="text-2xl md:text-3xl text-slate-200 mb-10 leading-[1.3] font-medium tracking-tight">
+                    "Investors usually bet on IIT degrees. I ask them to bet on <span class="text-white font-bold underline decoration-amber-500/50 underline-offset-4 italic">Execution Grit</span>. While big startups burn cash to acquire users they don't understand, I am building profitable tools for the Tier-2 Bharat I meet every single day."
+                </p>
+                
+                <div class="flex items-center gap-5">
+                    <div class="w-16 h-16 rounded-2xl bg-amber-500 shadow-xl shadow-amber-500/30 flex items-center justify-center font-black text-black text-2xl animate-float">L</div>
+                    <div>
+                        <div class="font-black text-xl text-white uppercase tracking-tighter">Lav Kumar Soni</div>
+                        <div class="text-[11px] text-slate-500 uppercase tracking-[0.2em] font-bold mt-1">Founder & Lead Architect, Lav Digital</div>
                     </div>
                 </div>
             </div>
             
-            <div class="hidden lg:flex items-center gap-10 text-[10px] font-black uppercase tracking-[0.25em] text-slate-400">
-                <a href="#ecosystem" class="hover:text-blue-400 transition">Products</a>
-                <a href="#proof" class="hover:text-blue-400 transition">Live Proof</a>
-                <a href="#market" class="hover:text-blue-400 transition">Scale</a>
-                <a href="#roadmap" class="hover:text-blue-400 transition">Roadmap</a>
-                <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
-            </div>
-
-            <div class="flex items-center gap-6">
-                <a href="https://wa.me/919753239303" target="_blank" class="btn-primary text-white px-9 py-4 rounded-full text-[11px] font-black hover:brightness-110 transition uppercase tracking-[0.2em] shadow-blue-500/20 font-bold">
-                    Pitch Deck
+            <div class="mt-20 flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="mailto:lavsoni1986@gmail.com" class="bg-white text-black px-14 py-5 rounded-full font-black text-xs uppercase tracking-[0.2em] hover:scale-105 active:scale-95 transition-all shadow-xl shadow-white/5">
+                    Email Pitch Deck
+                </a>
+                <a href="https://wa.me/919753239303" class="border border-white/10 text-white px-14 py-5 rounded-full font-black text-xs uppercase tracking-[0.2em] hover:bg-white/5 transition-all">
+                    WhatsApp Direct
                 </a>
             </div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="relative pt-80 pb-40 px-8">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[700px] bg-blue-600/5 blur-[160px] rounded-full pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto text-center relative z-10">
-            <div class="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[11px] font-black mb-10 tracking-[0.5em] uppercase">
-                <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-ping"></span> 
-                Tier-2 & Tier-3 Digital Infrastructure Hub
-            </div>
-
-            <div class="flex flex-col items-center justify-center gap-3 mb-16">
-                <div class="flex items-center gap-3">
-                    <svg width="160" height="44" viewBox="0 0 160 44" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="msmeGradHero" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stop-color="#0066FF"/>
-                                <stop offset="100%" stop-color="#00F5A0"/>
-                            </linearGradient>
-                        </defs>
-                        <rect x="0" y="0" rx="10" ry="10" width="160" height="44" fill="rgba(255,255,255,0.04)" stroke="url(#msmeGradHero)"/>
-                        <text x="80" y="18" font-size="11" fill="#E2E8F0" text-anchor="middle" font-weight="700" letter-spacing="2">
-                            MSME INDIA
-                        </text>
-                        <text x="80" y="32" font-size="8" fill="#94A3B8" text-anchor="middle" letter-spacing="1.5">
-                            GOVT VERIFIED
-                        </text>
-                    </svg>
-                    <span class="text-[10px] font-black uppercase tracking-widest text-slate-400 font-bold">
-                        Registered Startup
-                    </span>
-                </div>
-            </div>
-            
-            <h1 class="text-7xl md:text-[13rem] font-black text-white leading-[0.7] tracking-tighter mb-16 uppercase">
-                Bharat's <br>
-                <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-blue-400 to-emerald-400 uppercase font-black">Growth OS.</span>
-            </h1>
-            
-            <p class="text-xl md:text-3xl text-slate-400 mb-20 max-w-5xl mx-auto leading-relaxed font-bold uppercase tracking-tighter">
-                Building whitelabel SaaS ecosystems for Restaurants, Hospitals, News Media, and Local Commerce. 
-            </p>
-            
-            <div class="flex flex-col sm:flex-row justify-center gap-8">
-                <a href="#ecosystem" class="bg-white text-black px-16 py-8 rounded-[2.5rem] font-black text-2xl hover:scale-105 transition shadow-2xl text-center uppercase tracking-tighter">Solutions</a>
-                <a href="#proof" class="glass-card px-16 py-8 rounded-[2.5rem] font-black text-2xl hover:bg-white/5 transition border border-white/20 text-center uppercase tracking-tighter">Live Traction</a>
-            </div>
-        </div>
     </section>
 
-    <!-- Problem Section -->
-    <section id="problem" class="py-40 px-8 relative bg-red-950/10 border-y border-red-500/10">
-        <div class="max-w-7xl mx-auto text-left">
-            <div class="grid lg:grid-cols-2 gap-24 items-center">
-                <div class="font-bold uppercase">
-                    <span class="text-red-500 font-black uppercase tracking-[0.4em] text-[10px] mb-4 block font-bold">The Core Crisis</span>
-                    <h2 class="text-6xl font-black text-white tracking-tighter uppercase mb-10 leading-none">Bharat is <br>Digitally Broken.</h2>
-                    <p class="text-xl text-slate-400 mb-12 leading-relaxed tracking-tight">
-                        90% of Restaurants & MSMEs still run on manual paper-logs. Existing SaaS is too expensive for local nodes. We bridge this with hyper-affordable whitelabel systems.
-                    </p>
-                    <div class="grid grid-cols-2 gap-8">
-                        <div class="glass-card p-8 rounded-3xl border-red-500/20">
-                            <p class="text-red-400 font-black text-4xl mb-2">❌ 6Cr</p>
-                            <p class="text-xs text-slate-500 font-bold uppercase tracking-widest">Manual MSMEs</p>
-                        </div>
-                        <div class="glass-card p-8 rounded-3xl border-red-500/20">
-                            <p class="text-red-400 font-black text-4xl mb-2">❌ 0%</p>
-                            <p class="text-xs text-slate-500 font-bold uppercase tracking-widest">Systemized Data</p>
-                        </div>
-                    </div>
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white/5 bg-[#030303]">
+        <div class="max-w-7xl mx-auto px-6 text-center lg:text-left">
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-12 mb-16">
+                <div>
+                    <span class="font-black text-3xl tracking-tighter uppercase leading-none">LAV DIGITAL</span>
+                    <span class="text-[10px] text-slate-500 font-bold uppercase tracking-[0.3em] mt-2 block">Building for the Real Bharat from Shahdol</span>
                 </div>
-                <div class="glass-card p-12 rounded-[4rem] bg-gradient-to-br from-red-500/10 to-transparent text-left font-bold uppercase">
-                    <h4 class="text-2xl font-black text-white mb-8 italic tracking-tighter">The "Why" Behind Lav Digital</h4>
-                    <ul class="space-y-6 text-slate-400 text-xs tracking-widest">
-                        <li class="flex items-center gap-4"><div class="w-2 h-2 rounded-full bg-red-500"></div> Complex UI/UX Fails Tier-3 Users</li>
-                        <li class="flex items-center gap-4"><div class="w-2 h-2 rounded-full bg-red-500"></div> No Native Whitelabel Platforms</li>
-                        <li class="flex items-center gap-4"><div class="w-2 h-2 rounded-full bg-red-500"></div> Lack of Data-Security Trust</li>
-                        <li class="flex items-center gap-4"><div class="w-2 h-2 rounded-full bg-red-500"></div> Absence of Local Onboarding</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Slide 4: Real Traction -->
-    <section id="proof" class="py-40 px-8 relative overflow-hidden border-b border-white/[0.05]">
-        <div class="max-w-7xl mx-auto text-left">
-            <div class="mb-24">
-                <span class="text-emerald-400 font-black uppercase tracking-[0.4em] text-[10px] mb-4 block font-bold uppercase tracking-widest">Real Traction</span>
-                <h2 class="text-6xl font-black text-white tracking-tighter uppercase text-left">Proven Systems.</h2>
-            </div>
-
-            <div class="grid lg:grid-cols-2 xl:grid-cols-4 gap-8 text-left font-bold uppercase">
-                <!-- Case Study 1: Hospital -->
-                <div class="glass-card p-8 rounded-[3rem] group cursor-pointer text-left" onclick="toggleChat()">
-                    <div class="aspect-video bg-slate-900 rounded-[2rem] mb-8 overflow-hidden relative border border-white/10 flex items-center justify-center">
-                         <span class="text-5xl group-hover:scale-110 transition-transform">🏥</span>
-                         <div class="absolute bottom-4 left-4 right-4 h-1 w-full bg-blue-600 rounded-full"></div>
-                    </div>
-                    <h3 class="text-xl font-black text-white mb-3 tracking-tighter leading-tight text-left uppercase">Aditya Hospital</h3>
-                    <p class="text-slate-400 text-[10px] font-medium mb-6 italic text-left tracking-tight">"Wait times reduced by 40% via WhatsApp appointment engine."</p>
-                    <button class="text-blue-500 font-black text-[9px] uppercase tracking-widest text-left">Request Demo →</button>
-                </div>
-
-                <!-- Case Study 2: StyleQR (UPDATED LINK) -->
-                <div class="glass-card p-8 rounded-[3rem] group cursor-pointer text-left border-blue-500/20" onclick="window.open('https://styleqr-saas.vercel.app/', '_blank')">
-                    <div class="aspect-video bg-slate-900 rounded-[2rem] mb-8 overflow-hidden relative border border-white/10 flex items-center justify-center">
-                         <span class="text-5xl group-hover:scale-110 transition-transform">🍕</span>
-                         <div class="absolute top-4 right-4 px-3 py-1 bg-blue-600 text-white text-[7px] rounded-full tracking-widest">SaaS LIVE</div>
-                    </div>
-                    <h3 class="text-xl font-black text-white mb-3 tracking-tighter leading-tight text-left uppercase">StyleQR Restaurant</h3>
-                    <p class="text-slate-400 text-[10px] font-medium mb-6 italic text-left tracking-tight">"Whitelabel QR ordering hub for restaurants in Tier-2 Bharat."</p>
-                    <button onclick="window.open('https://styleqr-saas.vercel.app/', '_blank')" class="text-blue-500 font-black text-[9px] uppercase tracking-widest text-left">Visit Live →</button>
-                </div>
-
-                <!-- Case Study: Apna Chhattisgarh News -->
-                <div class="glass-card p-8 rounded-[3rem] group cursor-pointer text-left border-orange-500/20" onclick="window.open('https://www.youtube.com/@ApnaChhattisgar-p6d', '_blank')">
-                    <div class="aspect-video bg-slate-900 rounded-[2rem] mb-8 overflow-hidden relative border border-white/10 flex items-center justify-center">
-                         <span class="text-5xl group-hover:scale-110 transition-transform">📰</span>
-                         <div class="absolute top-4 right-4 px-3 py-1 bg-red-600 text-white text-[7px] rounded-full tracking-widest font-black uppercase">Youtube Live</div>
-                    </div>
-                    <h3 class="text-xl font-black text-white mb-3 tracking-tighter leading-tight text-left uppercase text-orange-400">Apna Chhattisgarh News</h3>
-                    <p class="text-slate-400 text-[10px] font-medium mb-6 italic text-left tracking-tight">"Chhattisgarh's digital news hub with hyper-local reach and engagement."</p>
-                    <button onclick="window.open('https://www.youtube.com/@ApnaChhattisgar-p6d', '_blank')" class="text-orange-500 font-black text-[9px] uppercase tracking-widest text-left font-bold">Watch Latest →</button>
-                </div>
-
-                <!-- Case Study 4: ShahdolBazaar -->
-                <div class="glass-card p-8 rounded-[3rem] group cursor-pointer text-left" onclick="window.open('https://shahdolbazaar.com', '_blank')">
-                    <div class="aspect-video bg-slate-900 rounded-[2rem] mb-8 overflow-hidden relative border border-white/10 flex items-center justify-center">
-                         <span class="text-5xl group-hover:scale-110 transition-transform">🛒</span>
-                         <div class="absolute bottom-4 left-4 right-4 h-1 w-full bg-blue-400 rounded-full"></div>
-                    </div>
-                    <h3 class="text-xl font-black text-white mb-3 tracking-tighter leading-tight text-left uppercase">ShahdolBazaar</h3>
-                    <p class="text-slate-400 text-[10px] font-medium mb-6 italic text-left tracking-tight">"Hyperlocal engine supporting local vendors & commerce."</p>
-                    <button class="text-blue-400 font-black text-[9px] uppercase tracking-widest text-left">Explore Hub →</button>
-                </div>
-            </div>
-
-            <!-- Tiny Metrics Box -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-                <div class="glass-card p-8 rounded-[2rem] text-center border-blue-500/10">
-                    <p class="text-4xl font-black text-blue-400 mb-2">4+</p>
-                    <p class="text-[10px] text-slate-500 uppercase tracking-widest">Live Verticals</p>
-                </div>
-                <div class="glass-card p-8 rounded-[2rem] text-center border-emerald-500/10">
-                    <p class="text-4xl font-black text-emerald-400 mb-2">100+</p>
-                    <p class="text-[10px] text-slate-500 uppercase tracking-widest">Partners</p>
-                </div>
-                <div class="glass-card p-8 rounded-[2rem] text-center border-orange-500/10">
-                    <p class="text-4xl font-black text-orange-400 mb-2">LIVE</p>
-                    <p class="text-[10px] text-slate-500 uppercase tracking-widest">News Reach</p>
-                </div>
-                <div class="glass-card p-8 rounded-[2rem] text-center border-purple-500/10">
-                    <p class="text-4xl font-black text-purple-400 mb-2">2026</p>
-                    <p class="text-[10px] text-slate-500 uppercase tracking-widest">Growth Year</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Bento -->
-    <section id="ecosystem" class="py-40 px-8 bg-slate-950/50 text-left">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-32">
-                <h2 class="text-7xl font-black text-white mb-6 tracking-tighter uppercase text-left">Product Stack.</h2>
-                <div class="w-24 h-1.5 bg-blue-600 rounded-full mb-8"></div>
-                <p class="text-slate-500 font-black uppercase tracking-[0.4em] text-[11px] font-bold uppercase tracking-widest">Scalable SaaS Architecture</p>
-            </div>
-
-            <div class="bento-grid">
-                <!-- Admin Hub -->
-                <div class="glass-card p-12 rounded-[4rem] bg-gradient-to-br from-purple-600/10 to-transparent flex flex-col justify-between group h-[480px] text-left cursor-pointer">
-                    <div class="text-left font-bold uppercase">
-                        <div class="flex justify-between items-start mb-16">
-                            <div class="w-16 h-16 bg-purple-600 rounded-3xl flex items-center justify-center text-4xl shadow-2xl">📊</div>
-                            <span class="px-5 py-2 rounded-full bg-purple-500/20 text-purple-400 text-[10px] font-black uppercase tracking-widest">Admin Hub</span>
-                        </div>
-                        <h3 class="text-3xl font-black text-white mb-6 tracking-tighter uppercase leading-none">Unified OS</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed mb-6 uppercase tracking-widest">Lead Dashboard, Order CRM, and centralized management for partners.</p>
-                    </div>
-                    <span class="text-purple-500 font-black text-[10px] uppercase tracking-[0.4em] font-bold">In-Dev →</span>
-                </div>
-
-                <!-- StyleQR (UPDATED LINK) -->
-                <div class="glass-card p-12 rounded-[4rem] bg-gradient-to-br from-blue-600/10 to-transparent flex flex-col justify-between group h-[480px] text-left border-blue-500/20 cursor-pointer" onclick="window.open('https://styleqr-saas.vercel.app/', '_blank')">
-                    <div class="text-left font-bold uppercase">
-                        <div class="flex justify-between items-start mb-16">
-                            <div class="w-16 h-16 bg-blue-600 rounded-3xl flex items-center justify-center text-4xl shadow-2xl font-bold">🟦</div>
-                            <span class="px-5 py-2 rounded-full bg-blue-500/20 text-blue-400 text-[10px] font-black uppercase tracking-widest">Restaurant SaaS</span>
-                        </div>
-                        <h3 class="text-3xl font-black text-white mb-4 tracking-tighter uppercase leading-none">StyleQR Restaurant OS</h3>
-                        <p class="text-blue-400 text-[9px] font-black tracking-[0.3em] mb-4">COMPLETE WHITELABEL ENGINE</p>
-                        <p class="text-slate-400 text-xs leading-relaxed mb-10 uppercase tracking-widest">Whitelabel QR Digital Menus, Orders, and Revenue Tracking for Food MSMEs.</p>
-                    </div>
-                    <span class="text-blue-500 font-black text-[10px] uppercase tracking-[0.4em] font-bold">Launch Whitelabel →</span>
-                </div>
-
-                <!-- Apna Chhattisgarh News (Media Hub) -->
-                <div class="glass-card p-12 rounded-[4rem] bg-gradient-to-br from-orange-600/10 to-transparent flex flex-col justify-between group h-[480px] text-left border-orange-500/20 relative overflow-hidden cursor-pointer" onclick="window.open('https://www.youtube.com/@ApnaChhattisgar-p6d', '_blank')">
-                    <div class="absolute top-0 right-0 p-8">
-                        <span class="bg-orange-500 text-black text-[8px] px-3 py-1.5 rounded-full font-black tracking-widest">LIVE SCALE</span>
-                    </div>
-                    <div class="text-left font-bold uppercase">
-                        <div class="flex justify-between items-start mb-16">
-                            <div class="w-16 h-16 bg-orange-600 rounded-3xl flex items-center justify-center text-4xl shadow-2xl font-bold">📡</div>
-                            <span class="px-5 py-2 rounded-full bg-orange-500/20 text-orange-400 text-[10px] font-black uppercase tracking-widest uppercase">Media Hub</span>
-                        </div>
-                        <h3 class="text-3xl font-black text-white mb-4 tracking-tighter uppercase leading-none">Apna Chhattisgarh News</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed mb-10 uppercase tracking-widest tracking-tighter">Our flagship digital news platform and video infrastructure for the heartland.</p>
-                    </div>
-                    <span class="text-orange-500 font-black text-[10px] uppercase tracking-[0.4em] font-bold">Visit Channel →</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Market Scale -->
-    <section id="market" class="py-40 px-8 relative overflow-hidden font-bold uppercase tracking-widest">
-        <div class="max-w-7xl mx-auto text-left font-bold uppercase">
-            <div class="mb-24">
-                <span class="text-blue-400 font-black uppercase tracking-[0.4em] text-[10px] mb-4 block font-bold uppercase tracking-widest">Market Scale</span>
-                <h2 class="text-7xl font-black text-white tracking-tighter uppercase">₹50,000 Cr+ TAM.</h2>
-                <p class="text-slate-400 max-w-3xl mt-10 text-xl font-medium tracking-tight normal-case leading-relaxed">
-                    India’s MSME digitization is accelerating post-UPI & WhatsApp adoption. 
-                    Lav Digital captures this inflection by delivering ultra-light SaaS & News Media Hubs for Tier-2 Bharat.
-                </p>
-            </div>
-            
-            <div class="grid lg:grid-cols-4 gap-8">
-                <div class="glass-card p-10 rounded-[3rem] border-blue-500/20">
-                    <p class="text-4xl font-black text-white mb-4">400M</p>
-                    <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Tier-2 Population</p>
-                </div>
-                <div class="glass-card p-10 rounded-[3rem] border-blue-500/20">
-                    <p class="text-4xl font-black text-white mb-4">60M</p>
-                    <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">MSME Nodes</p>
-                </div>
-                <div class="glass-card p-10 rounded-[3rem] border-blue-500/20 bg-blue-600/5">
-                    <p class="text-4xl font-black text-blue-400 mb-4">₹300 Cr</p>
-                    <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Target (Phase 1)</p>
-                </div>
-                <div class="glass-card p-10 rounded-[3rem] border-emerald-500/20">
-                    <p class="text-4xl font-black text-emerald-400 mb-4">25,000</p>
-                    <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Target Users</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Roadmap -->
-    <section id="roadmap" class="py-40 px-8 relative bg-black/40 border-y border-white/[0.05]">
-        <div class="max-w-7xl mx-auto text-left font-bold uppercase">
-            <div class="mb-24">
-                <span class="text-purple-400 font-black uppercase tracking-[0.4em] text-[10px] mb-4 block font-bold uppercase tracking-widest">Execution Roadmap</span>
-                <h2 class="text-6xl font-black text-white tracking-tighter uppercase">Growth Path.</h2>
-            </div>
-            
-            <div class="space-y-12 font-bold uppercase">
-                <div class="glass-card p-12 rounded-[4rem] flex flex-col md:flex-row gap-12 items-center border-purple-500/20">
-                    <div class="text-5xl font-black text-purple-500 tracking-tighter font-bold uppercase">2026</div>
-                    <div class="flex-1 text-left font-bold uppercase">
-                        <h4 class="text-2xl font-black text-white mb-4 uppercase">Infrastructure Completion</h4>
-                        <p class="text-slate-400 font-medium tracking-tight">Full whitelabel launch of StyleQR, Apna Chhattisgarh News Scaling, and 10 partner nodes in MP/CG.</p>
-                    </div>
-                </div>
-                <div class="glass-card p-12 rounded-[4rem] flex flex-col md:flex-row gap-12 items-center border-blue-500/20 bg-blue-600/5">
-                    <div class="text-5xl font-black text-blue-400 tracking-tighter font-bold uppercase">2027</div>
-                    <div class="flex-1 text-left font-bold uppercase">
-                        <h4 class="text-2xl font-black text-white mb-4 uppercase tracking-tighter">National Scaling</h4>
-                        <p class="text-slate-400 font-medium tracking-tight">Expansion to 100 cities with 25,000 vendors using LAV Growth OS. Media engine integration live.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Founder -->
-    <section id="about" class="py-40 px-8 relative text-left">
-        <div class="max-w-7xl mx-auto">
-            <div class="glass-card p-12 md:p-24 rounded-[6rem] flex flex-col md:flex-row gap-24 items-center border-blue-600/30">
-                <div class="relative group shrink-0">
-                    <div class="w-80 h-80 bg-slate-900 rounded-[3.5rem] border-4 border-blue-600 shadow-2xl flex items-center justify-center transition-transform group-hover:scale-105 relative overflow-hidden">
-                        <span class="text-[160px] select-none">👨‍💻</span>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    </div>
-                    <div class="absolute -bottom-8 -right-8 bg-blue-600 text-white p-8 rounded-[2.5rem] shadow-2xl font-bold uppercase">
-                        <p class="text-[12px] font-black tracking-[0.3em] font-bold">Shahdol, MP</p>
-                    </div>
-                </div>
-                <div class="space-y-10 text-left font-bold uppercase">
+                
+                <div class="flex flex-col sm:flex-row gap-12">
                     <div>
-                        <h3 class="text-6xl font-black text-white uppercase tracking-tighter leading-none mb-4 uppercase">Lav Kumar Soni</h3>
-                        <p class="text-blue-400 font-black text-sm uppercase tracking-[0.4em] font-bold uppercase">Founder & Systems Architect</p>
+                        <span class="text-[10px] uppercase tracking-widest text-slate-500 font-black mb-3 block">Direct Line</span>
+                        <a href="tel:9753239303" class="text-lg font-bold text-slate-300 hover:text-white transition-colors tracking-tight">+91 97532 39303</a>
                     </div>
-                    <p class="text-2xl text-slate-400 leading-relaxed font-medium max-w-3xl uppercase tracking-tighter">
-                        Building Bharat's digital infrastructure & Media Hubs for 10+ years. I research and deploy whitelabel OS for Tier-2 MSMEs.
-                    </p>
-                    <div class="flex flex-wrap gap-5">
-                        <div class="px-8 py-4 bg-white/5 border border-white/10 rounded-full text-white text-[10px] font-black tracking-widest font-bold">25,000 Node Goal</div>
-                        <div class="px-8 py-4 bg-blue-600/10 border border-blue-600/20 rounded-full text-blue-400 text-[10px] font-black tracking-widest font-bold uppercase">Infrastructure Lead</div>
+                    <div>
+                        <span class="text-[10px] uppercase tracking-widest text-slate-500 font-black mb-3 block">Email</span>
+                        <a href="mailto:lavsoni1986@gmail.com" class="text-lg font-bold text-slate-300 hover:text-white transition-colors tracking-tight">lavsoni1986@gmail.com</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Strategic Seed Round Section -->
-    <section id="contact" class="py-40 px-8 relative overflow-hidden text-left uppercase font-bold tracking-widest">
-        <div class="max-w-7xl mx-auto text-left">
-            <div class="glass-card p-16 md:p-32 rounded-[6rem] border-blue-500/20 shadow-2xl relative z-10 bg-gradient-to-br from-blue-900/10 to-transparent">
-                <div class="grid lg:grid-cols-2 gap-32 font-bold uppercase">
-                    <div class="text-left font-bold uppercase">
-                        <h2 class="text-5xl md:text-7xl font-black text-white mb-10 tracking-tighter uppercase">Strategic Seed Round <br>– ₹50 Lakhs.</h2>
-                        
-                        <div class="flex flex-col gap-4 mb-10 font-bold">
-                            <div class="flex items-center gap-3">
-                                <svg width="160" height="44" viewBox="0 0 160 44" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <linearGradient id="msmeGradInv" x1="0%" y1="0%" x2="100%" y2="0%">
-                                            <stop offset="0%" stop-color="#0066FF"/>
-                                            <stop offset="100%" stop-color="#00F5A0"/>
-                                        </linearGradient>
-                                    </defs>
-                                    <rect x="0" y="0" rx="10" ry="10" width="160" height="44" fill="rgba(255,255,255,0.04)" stroke="url(#msmeGradInv)"/>
-                                    <text x="80" y="18" font-size="11" fill="#E2E8F0" text-anchor="middle" font-weight="700" letter-spacing="2">
-                                        MSME INDIA
-                                    </text>
-                                    <text x="80" y="32" font-size="8" fill="#94A3B8" text-anchor="middle" letter-spacing="1.5">
-                                        GOVT VERIFIED
-                                    </text>
-                                </svg>
-                                <span class="text-[10px] font-black uppercase tracking-widest text-slate-400">
-                                    Registered Startup
-                                </span>
-                            </div>
-                            <p class="text-xs font-black uppercase tracking-widest text-emerald-400 leading-relaxed font-bold tracking-widest text-left">
-                                MSME Registered Technology Services Startup (Govt. of India)
-                            </p>
-                        </div>
-
-                        <p class="text-xl text-slate-400 mb-20 leading-relaxed font-black tracking-tighter uppercase tracking-tight">Building whitelabel SaaS for the heartland of India. Angel participation welcome.</p>
-                        
-                        <div class="space-y-16">
-                            <div class="flex items-center gap-10 group cursor-pointer" onclick="toggleChat()">
-                                <div class="w-20 h-20 bg-blue-600 rounded-[2.5rem] flex items-center justify-center text-5xl group-hover:scale-110 transition-transform shadow-2xl">📱</div>
-                                <div class="text-left">
-                                    <h4 class="font-black text-white uppercase text-[11px] tracking-widest mb-2 font-bold tracking-widest">Founder Direct</h4>
-                                    <p class="text-3xl text-slate-400 font-black tracking-tighter uppercase tracking-tighter font-bold">+91 9753239303</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="glass-card p-14 rounded-[5rem] bg-white/5 text-left font-bold uppercase">
-                        <form id="contactForm" onsubmit="handleContact(event)" class="space-y-8 text-left font-bold uppercase tracking-widest">
-                            <div class="grid grid-cols-2 gap-6">
-                                <input type="text" id="form-name" required class="w-full p-6 bg-white/5 border border-white/10 rounded-[2rem] text-sm text-white focus:border-blue-500 outline-none uppercase tracking-widest font-bold" placeholder="NAME">
-                                <input type="text" id="form-city" required class="w-full p-6 bg-white/5 border border-white/10 rounded-[2rem] text-sm text-white focus:border-blue-500 outline-none uppercase tracking-widest font-bold" placeholder="FIRM">
-                            </div>
-                            <select id="form-platform" class="w-full p-6 bg-slate-900 border border-white/10 rounded-[2rem] text-sm text-white appearance-none outline-none focus:border-blue-500 cursor-pointer uppercase font-bold tracking-widest">
-                                <option>Investment Query</option>
-                                <option>Whitelabel Partnership</option>
-                                <option>Apna Chhattisgarh News Query</option>
-                                <option>Restaurant OS Demo</option>
-                                <option>General Inquiry</option>
-                            </select>
-                            <button type="submit" class="w-full btn-primary text-white py-7 rounded-[3rem] font-black uppercase text-[12px] tracking-[0.5em] hover:scale-105 transition shadow-2xl text-center font-bold tracking-widest">Inquire Hub</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Global Footer (UPDATED LINK) -->
-    <footer class="py-32 px-8 border-t border-white/[0.05] bg-black text-left uppercase font-bold tracking-tight">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-20 text-center md:text-left font-bold">
-            <div class="text-left font-bold uppercase">
-                <div class="flex items-center gap-4 mb-10 justify-center md:justify-start">
-                    <div class="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center font-black text-white text-xl shadow-xl border border-white/10">
-                         <svg viewBox="0 0 100 100" class="w-10 h-10">
-                            <path d="M30 20 Q70 20 80 50 Q70 80 30 80 L30 70 Q60 70 70 50 Q60 30 30 30 Z" fill="#0066FF" opacity="0.9"/>
-                            <path d="M25 20 L35 20 L35 70 L60 70 L60 80 L25 80 Z" fill="#E2E8F0"/>
-                            <circle cx="50" cy="50" r="10" fill="url(#sun-glow-footer)"></circle>
-                        </svg>
-                    </div>
-                    <span class="text-3xl font-black tracking-tighter text-white leading-none uppercase font-black">LAV <br><span class="text-blue-500 font-black">DIGITAL</span></span>
-                </div>
-                <p class="text-slate-500 text-sm leading-loose max-w-sm text-left font-medium uppercase tracking-tight font-bold tracking-tight">
-                    Building the whitelabel OS for Bharat. <br>
-                    Research Hub: Shahdol, MP. <br>
-                    © 2026 Lav Kumar Soni. All Rights Reserved.
-                </p>
-
-                <p class="text-[9px] text-slate-600 uppercase tracking-widest mt-4">
-                    LAV DIGITAL — Proprietorship MSME | UDYAM Registered | India
-                </p>
-
-                <div class="flex items-center gap-3 mt-8 font-bold">
-                    <svg width="120" height="34" viewBox="0 0 160 44" xmlns="http://www.w3.org/2000/svg" class="opacity-50 hover:opacity-100 transition-opacity font-bold uppercase">
-                        <defs>
-                            <linearGradient id="msmeGradFooter" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stop-color="#0066FF"/>
-                                <stop offset="100%" stop-color="#00F5A0"/>
-                            </linearGradient>
-                        </defs>
-                        <rect x="0" y="0" rx="10" ry="10" width="160" height="44" fill="rgba(255,255,255,0.04)" stroke="url(#msmeGradFooter)"/>
-                        <text x="80" y="18" font-size="11" fill="#E2E8F0" text-anchor="middle" font-weight="700" letter-spacing="2">
-                            MSME INDIA
-                        </text>
-                        <text x="80" y="32" font-size="8" fill="#94A3B8" text-anchor="middle" letter-spacing="1.5">
-                            GOVT VERIFIED
-                        </text>
-                    </svg>
-                </div>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-24 text-[10px] font-black uppercase tracking-[0.4em] text-slate-500 text-left font-bold tracking-widest">
-                <div class="flex flex-col gap-6 text-left font-bold uppercase">
-                    <p class="text-white mb-2 text-left font-black tracking-widest font-bold uppercase tracking-widest">Live SaaS</p>
-                    <a href="https://styleqr-saas.vercel.app/" target="_blank" class="hover:text-blue-400 transition text-left font-bold uppercase tracking-widest">StyleQR Restaurant</a>
-                    <a href="https://shahdolbazaar.com" target="_blank" class="hover:text-blue-400 transition text-left font-bold uppercase tracking-widest">Bazaar Marketplace</a>
-                    <a href="https://www.youtube.com/@ApnaChhattisgar-p6d" target="_blank" class="hover:text-orange-400 transition text-left font-bold tracking-widest text-orange-400">Apna Chhattisgarh News</a>
-                </div>
-                <div class="flex flex-col gap-6 text-left font-bold uppercase">
-                    <p class="text-white mb-2 text-left font-black tracking-widest font-bold uppercase tracking-widest">Investor</p>
-                    <a href="#roadmap" class="hover:text-blue-400 transition text-left uppercase font-bold tracking-widest">Growth Plan</a>
-                    <a href="#market" class="hover:text-blue-400 transition text-left font-bold uppercase tracking-widest">Market TAM</a>
-                </div>
-                <div class="flex flex-col gap-6 text-left font-bold uppercase">
-                    <p class="text-white mb-2 text-left font-black tracking-widest font-bold uppercase tracking-widest">Support</p>
-                    <a href="https://wa.me/919753239303" target="_blank" class="hover:text-blue-400 transition font-bold uppercase tracking-widest">Founder Desk</a>
+            
+            <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-[10px] text-slate-600 uppercase tracking-[0.3em]">© 2026 Crafted in Shahdol, MP. The Digital Frontier.</p>
+                <div class="flex gap-8 text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">
+                    <a href="https://wa.me/919753239303" class="hover:text-white">WhatsApp</a>
+                    <a href="#" class="hover:text-white">LinkedIn</a>
+                    <a href="#" class="hover:text-white">Github</a>
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- Chat Trigger -->
-    <div class="fixed bottom-10 right-10 z-[300] flex flex-col items-end pointer-events-none uppercase">
-        <button id="chat-trigger" onclick="toggleChat()" class="pointer-events-auto w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center text-4xl shadow-[0_0_50px_rgba(0,102,255,0.4)] chat-pulse hover:scale-110 transition-transform active:scale-95 text-center">
-            <span id="chat-icon">💬</span>
-        </button>
-    </div>
-
-    <script>
-        function toggleChat() {
-            window.open('https://wa.me/919753239303?text=Hi%20Lav,%20I%20am%20reviewing%20the%20LAV%20DIGITAL%202026%20Growth%20OS%20Pitch.%20Let\'s%20connect.', '_blank');
-        }
-
-        function handleContact(e) {
-            e.preventDefault();
-            const name = document.getElementById('form-name').value;
-            const firm = document.getElementById('form-city').value;
-            const type = document.getElementById('form-platform').value;
-            const message = `🚀 *2026 SaaS Strategic Inquiry*%0A%0A*Name:* ${name}%0A*Firm:* ${firm}%0A*Type:* ${type}%0A%0A_Sent via LAV DIGITAL Hub_`;
-            
-            const toast = document.getElementById('success-toast');
-            toast.classList.remove('hidden');
-            
-            setTimeout(() => {
-                window.open(`https://wa.me/919753239303?text=${message}`, '_blank');
-                toast.classList.add('hidden');
-                document.getElementById('contactForm').reset();
-            }, 1200);
-        }
-    </script>
 
 </body>
 </html>
