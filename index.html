@@ -3,356 +3,338 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAV KUMAR SONI | Infrastructure for Bharat</title>
     
-    <!-- SEO & Social Meta Tags -->
-    <title>LAV KUMAR SONI | Building Bharat's Digital Infrastructure</title>
-    <meta name="description" content="Founder of StyleQR & BharatOS. Building a Tier-2 digital ecosystem from Shahdol. Ex-Media Expert (DB Group, Patrika).">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Founder of StyleQR & ShahdolBazaar. 10+ years media experience (Patrika, Nai Dunia, DB). Building Bharat's digital backbone solo. Target 2030: ₹300 Cr National Scale.">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Lav Kumar Soni | Digital Infrastructure Builder">
-    <meta property="og:description" content="Architecting the digital future of Tier-2 India. 10 years of Media trust meets modern Engineering.">
-    <meta property="og:image" content="https://lavdigital.in/preview.jpg"> <!-- Replace with real image later -->
-
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Inter:wght@300;400;600&family=JetBrains+Mono&family=Playfair+Display:ital,wght@1,900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (Via CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#FFB800',
+                            cyan: '#00F0FF',
+                            deep: '#030303',
+                            surface: '#0A0A0A'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['JetBrains Mono', 'monospace'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     
     <style>
-        :root {
-            --bg-deep: #030303;
-            --accent-gold: #FFB800;
-            --accent-cyan: #00F0FF;
-            --glass-bg: rgba(255, 255, 255, 0.02);
-            --glass-border: rgba(255, 255, 255, 0.07);
+        /* Custom UI Enhancements */
+        body { background-color: #030303; color: #f8fafc; overflow-x: hidden; line-height: 1.6; }
+        
+        .gold-gradient { background: linear-gradient(135deg, #FFD700 0%, #FF8C00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .cyan-gradient { background: linear-gradient(135deg, #00F0FF 0%, #0080FF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .glass-card { 
+            background: rgba(255, 255, 255, 0.02); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
+        }
+        .glass-card:hover { 
+            border-color: rgba(255, 255, 255, 0.2); 
+            background: rgba(255, 255, 255, 0.04); 
+            transform: translateY(-5px); 
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-deep);
-            color: #f8fafc;
-            overflow-x: hidden;
-            line-height: 1.6;
+        /* Roadmap visualization line */
+        .roadmap-line { 
+            position: absolute; left: 24px; top: 0; bottom: 0; width: 2px; 
+            background: linear-gradient(to bottom, transparent, rgba(255, 184, 0, 0.3), rgba(0, 240, 255, 0.3), transparent); 
+        }
+        @media (min-width: 768px) { .roadmap-line { left: 50%; transform: translateX(-50%); } }
+
+        /* Animated scanner for terminal */
+        @keyframes scan { 0% { transform: translateY(-100%); } 100% { transform: translateY(400px); } }
+        .scanner-line { height: 2px; background: linear-gradient(to right, transparent, #00F0FF, transparent); animation: scan 4s linear infinite; }
+
+        /* Dynamic background mesh */
+        .mesh-bg { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            background: radial-gradient(circle at 10% 20%, rgba(255, 184, 0, 0.05) 0%, transparent 40%), 
+                        radial-gradient(circle at 90% 80%, rgba(0, 240, 255, 0.05) 0%, transparent 40%); 
+            pointer-events: none; z-index: 0; 
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            letter-spacing: -0.02em;
-        }
-
-        .gold-gradient {
-            background: linear-gradient(135deg, #FFD700 0%, #FF8C00 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .cyan-gradient {
-            background: linear-gradient(135deg, #00F0FF 0%, #0080FF 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .glass-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .glass-card:hover {
-            border-color: rgba(255, 255, 255, 0.15);
-            background: rgba(255, 255, 255, 0.04);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px -20px rgba(0,0,0,0.5);
-        }
-
-        .os-badge {
-            @apply px-2 py-0.5 rounded bg-white/10 text-[10px] font-bold uppercase tracking-tight text-slate-300 border border-white/5;
-        }
-
-        .skill-tag {
-            @apply px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-wider text-slate-400;
-        }
-
-        .section-padding {
-            @apply py-20 md:py-32 px-6;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        .animate-float {
-            animation: float 4s ease-in-out infinite;
-        }
+        .status-dot { @apply w-4 h-4 rounded-full border-4 border-brand-deep z-10; }
+        .os-badge { @apply px-2 py-0.5 rounded bg-white/10 text-[10px] font-bold uppercase tracking-tight text-slate-300 border border-white/5; }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased selection:bg-brand-gold selection:text-black">
 
-    <!-- Navigation -->
+    <div class="mesh-bg"></div>
+
+    <!-- Navigation (Sticky & Transparent) -->
     <header class="fixed w-full z-50 top-0 border-b border-white/5 bg-[#030303]/80 backdrop-blur-xl">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center font-black text-black text-lg shadow-lg shadow-amber-500/20">L</div>
+            <div class="flex items-center gap-4 group cursor-pointer">
+                <div class="w-10 h-10 bg-brand-gold rounded-xl flex items-center justify-center font-black text-black text-lg shadow-lg shadow-brand-gold/30 transition-transform group-hover:scale-110">L</div>
                 <div class="flex flex-col leading-none">
-                    <span class="font-extrabold text-xl tracking-tighter uppercase text-white">LAV DIGITAL</span>
-                    <span class="text-[9px] font-bold text-amber-500 tracking-[0.2em] uppercase mt-1">Tier-2 Digital Infra</span>
+                    <span class="font-extrabold text-xl tracking-tighter uppercase text-white font-display">LAV DIGITAL</span>
+                    <span class="text-[9px] font-bold text-brand-gold tracking-[0.2em] uppercase mt-1">Sovereign Architect</span>
                 </div>
             </div>
-            <nav class="hidden lg:flex gap-10 text-[11px] font-bold uppercase tracking-widest text-slate-400">
-                <a href="#traction" class="hover:text-white transition-colors">Traction</a>
-                <a href="#concept" class="hover:text-white transition-colors">The Framework</a>
-                <a href="#work" class="hover:text-white transition-colors">Products</a>
-                <a href="#media" class="hover:text-white transition-colors">Experience</a>
-                <a href="#invest" class="text-amber-500 hover:text-amber-400">Pitch</a>
+            
+            <nav class="hidden lg:flex gap-8 text-[11px] font-bold uppercase tracking-widest text-slate-400">
+                <a href="#vision" class="text-brand-gold font-black underline underline-offset-8 decoration-brand-gold/30">Target 2030</a>
+                <a href="#invest" class="hover:text-white transition-colors">Thesis</a>
+                <a href="#products" class="hover:text-white transition-colors">Products</a>
+                <a href="#legacy" class="hover:text-white transition-colors">Media Legacy</a>
             </nav>
-            <a href="https://wa.me/919753239303" class="bg-white text-black px-7 py-2.5 rounded-full text-xs font-black uppercase hover:scale-105 transition-transform active:scale-95 shadow-lg shadow-white/10">
-                Connect
+
+            <a href="https://wa.me/919753239303" class="hidden sm:flex bg-white text-black px-7 py-2.5 rounded-full text-xs font-black uppercase hover:scale-105 transition-all shadow-lg">
+                Baat Karein (WhatsApp)
             </a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative pt-40 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden min-h-screen flex items-center">
-        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/10 blur-[130px] rounded-full -mr-48 -mt-48 opacity-50"></div>
-        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-500/10 blur-[130px] rounded-full -ml-48 -mb-48 opacity-50"></div>
-        
+    <!-- Hero Section: The Big Statement -->
+    <section class="relative pt-48 pb-24 md:pt-60 md:pb-40 px-6 min-h-screen flex items-center overflow-hidden">
         <div class="max-w-6xl mx-auto text-center relative z-10">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-slate-300 text-[10px] font-bold tracking-[0.2em] uppercase mb-10">
-                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Active Presence: Shahdol, MP
+            <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-slate-300 text-[10px] font-bold tracking-[0.2em] uppercase mb-12">
+                <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span> Shahdol (MP) se All India Vision
             </div>
             
-            <h1 class="text-5xl md:text-9xl font-black mb-10 leading-[1] md:leading-[0.85] tracking-tighter">
+            <h1 class="text-6xl md:text-9xl font-black mb-10 leading-[0.9] tracking-tighter font-display">
                 Infrastructure <br/>
-                <span class="gold-gradient italic font-serif text-6xl md:text-[10rem]">for Bharat.</span>
+                <span class="gold-gradient font-serif italic text-5xl md:text-[10rem]">for Bharat.</span>
             </h1>
-            
-            <p class="text-lg md:text-2xl text-slate-400 mb-16 max-w-3xl mx-auto leading-relaxed font-light">
-                One laptop, 10 years of Media Trust, and 100% Bootstrapped Engineering. 
-                Building the <span class="text-white font-semibold italic">BharatOS Framework</span>—a digital ecosystem 
-                designed for the specific needs of Tier-2 India.
+
+            <p class="text-slate-400 text-lg md:text-2xl mb-16 max-w-4xl mx-auto leading-relaxed font-light">
+                Abhi hum zero capital par hain, lekin humara foundation 10 saal ke media trust aur <strong>Solo Engineering</strong> par khada hai. Bharat ke heartland ke liye ₹300 Crore ka digital ecosystem build karna vision hai.
             </p>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
-                <div class="glass-card p-6 rounded-2xl border-b-4 border-amber-500/50">
-                    <div class="text-2xl md:text-3xl font-black text-white mb-1">Q1 2026</div>
-                    <div class="text-[9px] uppercase tracking-widest text-slate-500 font-bold">Execution Phase</div>
-                </div>
-                <div class="glass-card p-6 rounded-2xl">
-                    <div class="text-2xl md:text-3xl font-black text-cyan-400 mb-1 tracking-tighter">DSSL</div>
-                    <div class="text-[9px] uppercase tracking-widest text-slate-500 font-bold">Risk Lab</div>
-                </div>
-                <div class="glass-card p-6 rounded-2xl">
-                    <div class="text-2xl md:text-3xl font-black text-white mb-1 tracking-tighter">50+</div>
-                    <div class="text-[9px] uppercase tracking-widest text-slate-500 font-bold">Local Partners</div>
-                </div>
-                <div class="glass-card p-6 rounded-2xl border-b-4 border-blue-500/50">
-                    <div class="text-2xl md:text-3xl font-black text-blue-400 mb-1 tracking-tighter">NEXT.JS</div>
-                    <div class="text-[9px] uppercase tracking-widest text-slate-500 font-bold">Production Code</div>
-                </div>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="#invest" class="bg-brand-gold text-black px-12 py-5 rounded-full font-black text-sm uppercase hover:shadow-2xl transition-all hover:scale-105 flex items-center gap-3 justify-center">
+                    Thesis Dekhein <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                </a>
+                <a href="#products" class="border border-white/20 text-white px-12 py-5 rounded-full font-black text-sm uppercase hover:bg-white/5 transition-all">
+                    Live Deployments
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- TRACTION SNAPSHOT (Investor Section) -->
-    <section id="traction" class="py-16 px-6 relative border-t border-white/5 bg-white/[0.01]">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <span class="block text-4xl md:text-5xl font-black text-amber-500 mb-2">PoC</span>
-                    <span class="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Stage: Proof of Concept</span>
-                </div>
-                <div class="text-center">
-                    <span class="block text-4xl md:text-5xl font-black text-white mb-2">10+</span>
-                    <span class="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Years Media Experience</span>
-                </div>
-                <div class="text-center">
-                    <span class="block text-4xl md:text-5xl font-black text-cyan-400 mb-2">DSSL</span>
-                    <span class="text-[10px] uppercase font-bold text-slate-500 tracking-widest">National Vision</span>
-                </div>
-                <div class="text-center">
-                    <span class="block text-4xl md:text-5xl font-black text-green-500 mb-2">LIVE</span>
-                    <span class="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Nai Dunia Feature</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- THE FRAMEWORK (CONCEPT) -->
-    <section id="concept" class="section-padding relative">
+    <!-- Business Logic & Investor Hub -->
+    <section id="invest" class="py-32 px-6 relative overflow-hidden border-y border-white/5 bg-white/[0.01]">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-24">
-                <span class="gold-gradient font-black tracking-[0.4em] text-[11px] uppercase mb-6 block">Strategic Framework</span>
-                <h2 class="text-5xl md:text-7xl font-black mb-8 uppercase tracking-tighter italic">The BharatOS Core</h2>
-                <p class="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">Infrastructure that bridges the gap between traditional Kirana and high-tech digital efficiency.</p>
+                <span class="gold-gradient font-black tracking-[0.4em] text-[11px] uppercase mb-6 block">Kyun Invest Karein?</span>
+                <h2 class="text-4xl md:text-7xl font-black mb-8 uppercase italic font-display tracking-tighter leading-none text-white font-serif">Investor <br/> Thesis</h2>
+                <p class="text-slate-500 text-lg max-w-2xl mx-auto italic font-light">Investors IIT ki degree par bet karte hain, main unhe **Execution Grit** par bet karne ko kehta hoon.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Layer 1 -->
-                <div class="glass-card p-10 rounded-[2.5rem] relative group">
-                    <h4 class="text-amber-500 font-black text-xs uppercase mb-6 tracking-widest">Trust Pillar</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed">Built on a decade of on-ground experience at <span class="text-white">Patrika & DB Group</span>. We understand the user before the user understands the app.</p>
+            <div class="grid lg:grid-cols-2 gap-10">
+                <!-- Left Column -->
+                <div class="space-y-6">
+                    <div class="glass-card p-10 rounded-[3rem] border-brand-gold/20">
+                        <h4 class="text-brand-gold font-black text-xs uppercase mb-6 tracking-widest underline underline-offset-8">1. Asli Ground Reality</h4>
+                        <p class="text-xl text-white font-light leading-relaxed">
+                            "Main Shahdol (MP) se hoon, maine akele bina kisi paise ke wo systems khade kiye hain jo badi companies crores phoonk kar bhi nahi kar paati—**Local Trust.**"
+                        </p>
+                    </div>
+                    <div class="glass-card p-10 rounded-[3rem]">
+                        <h4 class="text-slate-500 font-black text-xs uppercase mb-6 tracking-widest">2. Hamari Solution (The Moat)</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Hum 'Burn' nahi, 'Build' karne wale log hain. Hamara <strong>Moltbook Protocol</strong> aur <strong>DSSL</strong> (Digital Safety Signal Layer) Bharat ke har digital user ki aslee zaroorat hai. 
+                        </p>
+                        <div class="flex flex-wrap gap-4 text-brand-cyan text-[10px] font-black uppercase tracking-widest">
+                            <span>✓ Zero Capital Tech</span>
+                            <span>✓ DSSL Safety Signals</span>
+                            <span>✓ Tier-2 Expansion logic</span>
+                        </div>
+                    </div>
                 </div>
-                <!-- Layer 2 -->
-                <div class="glass-card p-10 rounded-[2.5rem] relative group">
-                    <h4 class="text-blue-400 font-black text-xs uppercase mb-6 tracking-widest">Engineering</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed">Lightweight, low-latency stack using <span class="text-white">Next.js 15</span>. Optimized for Bharat's diverse hardware and network spectrum.</p>
-                </div>
-                <!-- Layer 3 -->
-                <div class="glass-card p-10 rounded-[2.5rem] relative group border-cyan-500/20">
-                    <h4 class="text-cyan-400 font-black text-xs uppercase mb-6 tracking-widest">DSSL Lab</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed">Research-driven advisory framework for <span class="text-white">early risk awareness</span>. Protecting digital first-timers from systemic fraud.</p>
-                </div>
-                <!-- Layer 4 -->
-                <div class="glass-card p-10 rounded-[2.5rem] relative group">
-                    <h4 class="text-green-400 font-black text-xs uppercase mb-6 tracking-widest">Hyperlocal</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed">Sustainable business models that generate revenue from Day 1. No heavy cash-burn; just <span class="text-white">Pure Utility</span>.</p>
+
+                <!-- Right Column (Financial Target) -->
+                <div class="glass-card p-12 rounded-[4rem] border-b-8 border-brand-gold relative overflow-hidden">
+                    <div class="absolute -right-20 -top-20 w-64 h-64 bg-brand-gold/10 blur-[100px] rounded-full"></div>
+                    <h4 class="text-white font-black text-xl mb-10 uppercase italic font-display">Target: BharatOS Ecosystem</h4>
+                    
+                    <div class="space-y-10">
+                        <div class="flex items-start gap-6">
+                            <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-brand-gold font-black text-xl">₹</div>
+                            <div>
+                                <h5 class="text-white font-black text-sm uppercase mb-1">Scale Lakshya</h5>
+                                <p class="text-brand-gold text-3xl font-black italic font-serif">₹300 Crore Company</p>
+                                <p class="text-slate-500 text-[10px] uppercase font-bold tracking-widest mt-1">2030 tak National Infra Milestone</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-6">
+                            <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-brand-cyan font-black text-xl">🚀</div>
+                            <div>
+                                <h5 class="text-white font-black text-sm uppercase mb-1">The Ask</h5>
+                                <p class="text-slate-300 text-sm leading-relaxed font-light">Seed capital to scale our **MP/CG regional grid** and train our **DSSL AI Engine.**</p>
+                            </div>
+                        </div>
+
+                        <div class="pt-8 border-t border-white/5">
+                            <a href="mailto:lav@lavdigital.in" class="w-full bg-white text-black py-4 rounded-2xl font-black text-center block uppercase tracking-widest hover:scale-105 transition-all">Deck Request (Email)</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MEDIA EXPERIENCE -->
-    <section id="media" class="py-32 px-6 bg-white/[0.01] border-y border-white/5">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col lg:flex-row justify-between items-center gap-16">
-                <div class="max-w-2xl text-center lg:text-left">
-                    <span class="text-amber-500 font-bold uppercase tracking-widest text-[10px] mb-4 block underline underline-offset-8">Legacy Foundation</span>
-                    <h2 class="text-4xl md:text-6xl font-black mb-8 uppercase tracking-tighter leading-[0.9]">Beyond Code: <br/> The Trust Engine</h2>
-                    <p class="text-lg text-slate-400 leading-relaxed mb-6">
-                        Most developers build for "Users". I build for "Community". My years managing brands at <span class="text-white font-bold italic">Dainik Bhaskar</span> and <span class="text-white font-bold italic">Patrika</span> are the secret sauce of our product adoption.
-                    </p>
-                    <div class="flex flex-wrap justify-center lg:justify-start gap-4">
-                        <span class="skill-tag">Media Marketing</span>
-                        <span class="skill-tag">Psychological Branding</span>
-                        <span class="skill-tag">Tier-2 Strategy</span>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full lg:w-auto">
-                    <div class="glass-card p-8 rounded-2xl text-center">
-                        <span class="text-xl font-black text-white block">DB GROUP</span>
-                        <span class="text-[9px] uppercase font-bold text-slate-500">Ex-Senior Management Associate, Ad Sales</span>
-                    </div>
-                    <div class="glass-card p-8 rounded-2xl text-center">
-                        <span class="text-xl font-black text-white block tracking-widest">PATRIKA</span>
-                        <span class="text-[9px] uppercase font-bold text-slate-500">Marketing Expert</span>
-                    </div>
-                </div>
-            </div>
+    <!-- The 2026-2030 Roadmap -->
+    <section id="vision" class="py-32 px-6 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto text-center mb-32">
+            <span class="gold-gradient font-black tracking-[0.4em] text-[11px] uppercase mb-6 block font-display">Future Strategy</span>
+            <h2 class="text-5xl md:text-8xl font-black mb-8 uppercase italic font-display tracking-tighter text-white font-serif">Vision 2030</h2>
         </div>
-    </section>
 
-    <!-- ECOSYSTEM PRODUCTS -->
-    <section id="work" class="section-padding">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row items-center gap-6 mb-20">
-                <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter">Current Production Units</h2>
-                <div class="h-px bg-white/10 flex-grow hidden md:block"></div>
-                <span class="text-xs font-bold text-slate-500 uppercase tracking-widest">Status: Revenue Positive</span>
-            </div>
+        <div class="relative max-w-5xl mx-auto pl-12 md:pl-0">
+            <div class="roadmap-line"></div>
             
-            <div class="grid md:grid-cols-2 gap-10">
-                <!-- StyleQR -->
-                <div class="glass-card p-12 rounded-[3rem] group">
-                    <div class="flex justify-between items-start mb-10">
-                        <div class="w-16 h-16 bg-amber-500/10 rounded-2xl flex items-center justify-center border border-amber-500/20 group-hover:bg-amber-500/20 transition-all">
-                            <svg class="w-8 h-8 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01"></path></svg>
-                        </div>
-                        <div class="flex flex-col items-end gap-2 text-right">
-                            <span class="os-badge border-amber-500/30 text-amber-500">B2B SaaS</span>
-                            <p class="text-[10px] text-slate-500 font-bold leading-tight">Solving Fine-Dining <br/> Friction</p>
-                        </div>
-                    </div>
-                    <h3 class="text-3xl font-black mb-4">StyleQR</h3>
-                    <p class="text-slate-400 mb-10 leading-relaxed">The Operating System for Shahdol's hospitality sector. A cloud-native KDS & Analytics platform helping restaurants manage staff shortage with tech.</p>
-                    <a href="https://stylerqrestaurant.in/" target="_blank" class="inline-flex items-center gap-3 text-white font-bold hover:text-amber-400 transition-all group-hover:translate-x-2">
-                        Platform Preview <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                    </a>
+            <!-- 2026 -->
+            <div class="flex flex-col md:flex-row items-center mb-32 gap-8 md:gap-0 relative">
+                <div class="md:w-1/2 md:pr-16 md:text-right">
+                    <div class="inline-block px-3 py-1 rounded bg-green-500/10 text-green-500 text-[9px] font-black uppercase mb-4">🟢 2026: Foundation</div>
+                    <h4 class="text-3xl font-black text-white mb-2 uppercase font-display tracking-tighter">Infra Readiness</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed font-light">Moltbook framework ko Shahdol mein fully stable karna aur ground-level connectivity grids deploy karna.</p>
                 </div>
+                <div class="status-dot bg-brand-gold absolute left-[-44px] md:left-auto md:static shadow-[0_0_15px_rgba(255,184,0,0.5)]"></div>
+                <div class="md:w-1/2 md:pl-16"></div>
+            </div>
 
-                <!-- ShahdolBazaar -->
-                <div class="glass-card p-12 rounded-[3rem] group">
-                    <div class="flex justify-between items-start mb-10">
-                        <div class="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center border border-blue-500/20 group-hover:bg-blue-500/20 transition-all">
-                            <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z\"></path></svg>
-                        </div>
-                        <div class="flex flex-col items-end gap-2 text-right">
-                            <span class="os-badge border-blue-500/30 text-blue-500">Hyperlocal B2C</span>
-                            <p class="text-[10px] text-slate-500 font-bold leading-tight">Digital Bridge for <br/> 500+ Vendors</p>
-                        </div>
-                    </div>
-                    <h3 class="text-3xl font-black mb-4">ShahdolBazaar</h3>
-                    <p class="text-slate-400 mb-10 leading-relaxed">Hyperlocal marketplace bridge connecting traditional Kirana shops to the modern digital consumer without heavy commissions.</p>
-                    <a href="https://shahdolbazaar.com" target="_blank" class="inline-flex items-center gap-3 text-white font-bold hover:text-blue-400 transition-all group-hover:translate-x-2">
-                        Open Marketplace <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                    </a>
+            <!-- 2027 -->
+            <div class="flex flex-col md:flex-row items-center mb-32 gap-8 md:gap-0 relative">
+                <div class="md:w-1/2 md:pr-16"></div>
+                <div class="status-dot bg-brand-cyan absolute left-[-44px] md:left-auto md:static shadow-[0_0_15px_rgba(0,240,255,0.5)]"></div>
+                <div class="md:w-1/2 md:pl-16 text-left">
+                    <div class="inline-block px-3 py-1 rounded bg-brand-gold/10 text-brand-gold text-[9px] font-black uppercase mb-4">🟡 2027: MP/CG Scaling</div>
+                    <h4 class="text-3xl font-black text-white mb-2 uppercase font-display tracking-tighter">Regional Power</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed font-light">Shahdol ke model ko Madhya Pradesh aur Chhattisgarh ke 10+ districts mein expand aur connect karna.</p>
                 </div>
+            </div>
+
+            <!-- 2030 -->
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-0 relative">
+                <div class="md:w-1/2 md:pr-16 md:text-right">
+                    <div class="inline-block px-3 py-1 rounded bg-brand-gold/20 text-brand-gold text-[9px] font-black uppercase mb-4 font-display">👑 2030: Target</div>
+                    <h4 class="text-4xl font-black gold-gradient mb-2 uppercase font-display tracking-tighter">₹300 CR Scale</h4>
+                    <p class="text-slate-300 text-sm leading-relaxed italic font-light">All India digital backbone for heartland Bharat. Ek sovereign utility jo 50M+ users ko serve karegi.</p>
+                </div>
+                <div class="status-dot bg-brand-gold absolute left-[-44px] md:left-auto md:static shadow-[0_0_30px_#FFB800]"></div>
+                <div class="md:w-1/2 md:pl-16"></div>
             </div>
         </div>
     </section>
 
-    <!-- INVESTOR THESIS -->
-    <section id="invest" class="section-padding border-t border-white/5 bg-gradient-to-b from-transparent to-amber-500/5">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-5xl md:text-6xl font-black mb-12 uppercase tracking-tighter italic leading-none">The Investment Thesis</h2>
-            <div class="glass-card p-10 md:p-16 rounded-[3rem] text-left relative overflow-hidden shadow-2xl">
-                <div class="absolute -right-20 -top-20 w-64 h-64 bg-amber-500/10 blur-[100px] rounded-full"></div>
-                
-                <p class="text-2xl md:text-3xl text-slate-200 mb-10 leading-[1.3] font-medium tracking-tight">
-                    "Investors usually bet on IIT degrees. I ask them to bet on <span class="text-white font-bold underline decoration-amber-500/50 underline-offset-4 italic">Execution Grit</span>. While big startups burn cash to acquire users they don't understand, I am building profitable tools for the Tier-2 Bharat I meet every single day."
-                </p>
-                
-                <div class="flex items-center gap-5">
-                    <div class="w-16 h-16 rounded-2xl bg-amber-500 shadow-xl shadow-amber-500/30 flex items-center justify-center font-black text-black text-2xl animate-float">L</div>
-                    <div>
-                        <div class="font-black text-xl text-white uppercase tracking-tighter">Lav Kumar Soni</div>
-                        <div class="text-[11px] text-slate-500 uppercase tracking-[0.2em] font-bold mt-1">Founder & Lead Architect, Lav Digital</div>
-                    </div>
-                </div>
+    <!-- Legacy Sequence (Preserved) -->
+    <section id="legacy" class="py-32 px-6 border-t border-white/5 bg-white/[0.01]">
+        <div class="max-w-7xl mx-auto text-center mb-20">
+            <h2 class="text-4xl md:text-6xl font-black uppercase italic font-display tracking-tighter leading-none text-white">Media Legacy</h2>
+            <p class="text-slate-500 mt-4 font-bold text-xs uppercase tracking-[0.2em]">Asli Anubhav Ground ka</p>
+        </div>
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+            <div class="glass-card p-10 rounded-[3rem] border-brand-gold/10 group">
+                <div class="text-slate-500 font-black text-6xl mb-6 group-hover:text-brand-gold transition-colors font-display">01</div>
+                <h3 class="text-2xl font-black mb-2 uppercase text-white font-display">Patrika</h3>
+                <p class="text-brand-gold text-[10px] mb-4 uppercase font-bold tracking-[0.2em]">Marketing Expert</p>
+                <p class="text-slate-400 text-sm leading-relaxed font-light">Bharat audiences ke beech trust build karne ki buniyad.</p>
             </div>
-            
-            <div class="mt-20 flex flex-col sm:flex-row gap-6 justify-center">
-                <a href="mailto:lavsoni1986@gmail.com" class="bg-white text-black px-14 py-5 rounded-full font-black text-xs uppercase tracking-[0.2em] hover:scale-105 active:scale-95 transition-all shadow-xl shadow-white/5">
-                    Email Pitch Deck
-                </a>
-                <a href="https://wa.me/919753239303" class="border border-white/10 text-white px-14 py-5 rounded-full font-black text-xs uppercase tracking-[0.2em] hover:bg-white/5 transition-all">
-                    WhatsApp Direct
-                </a>
+            <div class="glass-card p-10 rounded-[3rem] border-white/10 group">
+                <div class="text-slate-500 font-black text-6xl mb-6 group-hover:text-white transition-colors font-display">02</div>
+                <h3 class="text-2xl font-black mb-2 uppercase text-white font-display">Nai Dunia</h3>
+                <p class="text-slate-500 text-[10px] mb-4 uppercase font-bold tracking-[0.2em]">System Operations</p>
+                <p class="text-slate-400 text-sm leading-relaxed font-light">Media logistics aur local networks ki gehari samajh.</p>
+            </div>
+            <div class="glass-card p-10 rounded-[3rem] border-white/10 group">
+                <div class="text-slate-500 font-black text-6xl mb-6 group-hover:text-white transition-colors font-display">03</div>
+                <h3 class="text-2xl font-black mb-2 uppercase text-white font-display tracking-tighter">Dainik Bhaskar</h3>
+                <p class="text-slate-500 text-[10px] mb-4 uppercase font-bold tracking-[0.2em]">Management</p>
+                <p class="text-slate-400 text-sm leading-relaxed font-light">Ad-sales aur national scale branding ki expertise.</p>
+            </div>
+        </div>
+
+        <!-- YouTube Link Update -->
+        <div class="mt-12 glass-card p-10 rounded-[3.5rem] bg-red-600/5 border-red-600/10 flex flex-col md:flex-row items-center justify-between gap-10">
+            <div class="flex-1">
+                <h3 class="text-2xl font-black uppercase text-white font-display mb-4 flex items-center gap-3">
+                    <span class="w-8 h-8 bg-red-600 rounded-full inline-block"></span> MorChhattisgarh
+                </h3>
+                <p class="text-slate-400 text-sm leading-relaxed font-light">Connecting heartland stories via @Chattisgarh-e4h. Real People, Real Digital Voice.</p>
+            </div>
+            <a href="https://youtube.com/@Chattisgarh-e4h" target="_blank" class="bg-red-600 text-white px-8 py-3 rounded-full font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">Subscribe Channel</a>
+        </div>
+    </section>
+
+    <!-- Deployments -->
+    <section id="products" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto text-center mb-20">
+            <h2 class="text-4xl md:text-6xl font-black uppercase italic font-display tracking-tighter text-white font-serif">Live Deployments</h2>
+        </div>
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10">
+            <div class="glass-card p-12 rounded-[3.5rem] border-brand-gold/20 relative group overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-brand-gold/5 blur-[50px] rounded-full group-hover:bg-brand-gold/10 transition-all"></div>
+                <h3 class="text-4xl font-black mb-4 font-display">StyleQR</h3>
+                <p class="text-slate-400 mb-10 leading-relaxed text-lg font-light italic font-sans">Kitchen automation infrastructure for Tier-2 restaurants. Built Solo in Shahdol.</p>
+                <a href="https://stylerqrestaurant.in/" target="_blank" class="inline-flex items-center gap-3 text-white font-bold hover:text-brand-gold transition-all group-hover:translate-x-2">Live Platform <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-width="2"></path></svg></a>
+            </div>
+            <div class="glass-card p-12 rounded-[3.5rem] border-brand-cyan/20 relative group overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-brand-cyan/5 blur-[50px] rounded-full group-hover:bg-brand-cyan/10 transition-all"></div>
+                <h3 class="text-4xl font-black mb-4 font-display">ShahdolBazaar</h3>
+                <p class="text-slate-400 mb-10 leading-relaxed text-lg font-light italic font-sans">Empowering Kirana shops through a zero-commission digital portal.</p>
+                <a href="https://shahdolbazaar.com" target="_blank" class="inline-flex items-center gap-3 text-white font-bold hover:text-brand-cyan transition-all group-hover:translate-x-2">Live Platform <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-width="2"></path></svg></a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-20 border-t border-white/5 bg-[#030303]">
-        <div class="max-w-7xl mx-auto px-6 text-center lg:text-left">
-            <div class="flex flex-col lg:flex-row justify-between items-center gap-12 mb-16">
-                <div>
-                    <span class="font-black text-3xl tracking-tighter uppercase leading-none text-white">LAV DIGITAL</span>
-                    <span class="text-[10px] text-slate-500 font-bold uppercase tracking-[0.3em] mt-2 block">Building for the Real Bharat from Shahdol</span>
-                </div>
-                
-                <div class="flex flex-col sm:flex-row gap-12">
-                    <div>
-                        <span class="text-[10px] uppercase tracking-widest text-slate-500 font-black mb-3 block">Direct Line</span>
-                        <a href="tel:9753239303" class="text-lg font-bold text-slate-300 hover:text-white transition-colors tracking-tight">+91 97532 39303</a>
-                    </div>
-                    <div>
-                        <span class="text-[10px] uppercase tracking-widest text-slate-500 font-black mb-3 block">Email</span>
-                        <a href="mailto:lavsoni1986@gmail.com" class="text-lg font-bold text-slate-300 hover:text-white transition-colors tracking-tight">lavsoni1986@gmail.com</a>
-                    </div>
-                </div>
+    <footer class="py-20 border-t border-white/5 bg-black text-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16">
+                <div class="font-black text-3xl tracking-tighter uppercase mb-2 font-display text-white italic font-serif">LAV DIGITAL</div>
+                <div class="text-[10px] text-slate-600 uppercase tracking-[0.5em] font-bold">Shahdol, MP • Bharat ke liye Infrastructure</div>
             </div>
-            
-            <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-                <p class="text-[10px] text-slate-600 uppercase tracking-[0.3em]">© 2026 Crafted in Shahdol, MP. The Digital Frontier.</p>
-                <div class="flex gap-8 text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">
-                    <a href="https://wa.me/919753239303" class="hover:text-white">WhatsApp</a>
-                    <a href="#" class="hover:text-white">LinkedIn</a>
-                    <a href="#" class="hover:text-white">Github</a>
-                </div>
+            <div class="flex flex-wrap justify-center gap-12 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-16 font-display">
+                <a href="mailto:lav@lavdigital.in" class="hover:text-white transition-colors">lav@lavdigital.in</a>
+                <a href="https://wa.me/919753239303" class="hover:text-white transition-colors">WhatsApp Direct</a>
+            </div>
+            <div class="mt-12 text-[10px] text-slate-800 uppercase tracking-widest font-black italic">
+                © 2026 Crafted Solo in Shahdol. The Digital Heartland is Rising.
             </div>
         </div>
     </footer>
 
+    <script>
+        // Reveal Animations for Sections
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
